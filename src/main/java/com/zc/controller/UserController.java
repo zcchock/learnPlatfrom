@@ -2,7 +2,6 @@ package com.zc.controller;
 
 import com.zc.api.DataRequest;
 import com.zc.api.DataResponse;
-import com.zc.mapper.UserMapper;
 import com.zc.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +27,8 @@ public class UserController {
     private HttpServletRequest request;
     @Autowired
     private ApplicationContext applicationContext;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/list",method = RequestMethod.POST)
     public DataResponse Userlist(@RequestBody(required = false) DataRequest dataRequest) {
@@ -40,10 +41,8 @@ public class UserController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(DataRequest dataRequest) {
-        String clientIp = request.getRemoteAddr();
-        dataRequest.setClientIp(clientIp);
-
-        return null;
+        DataResponse dataResponse = userService.login(dataRequest);
+        return  dataResponse;
     }
 
 }

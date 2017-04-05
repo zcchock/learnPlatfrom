@@ -5,8 +5,37 @@ var userFunction = (function ($) {
     $(function () {
         
     })
-    
+    function errCallback(){
+        toastr["error"]("请求失败", "网络异常");
+    }
     return {
+        login:function(){
+            var inputUser = $('#inputUser').val()
+            var inputPassword = $('#inputPassword').val()
+            var reqdata = {
+                data:{
+                    inputUser:inputUser,
+                    inputPassword:inputPassword,
+                }
+            }
+            $.ajax({
+                url: "/login",
+                contentType: "application/json",
+                type: "post",
+                data: JSON.stringify(reqdata),
+                success: function (resp) {
+                    if (resp.status === "success") {
+                        //if(resp.data != null && resp.data.length>0){
+                        var str = JSON.parse(resp.data);
+                        window.location.href=''+str;
+                        toastr["success"](resp.message, "成功提示");
+                    } else {
+                        toastr["error"](resp.message, "错误提示");
+                    }
+                },
+                error: errCallback
+            });
+        },
         loginUser: function () {
             $.ajax({ url: "test.html",
                 context: document.body,

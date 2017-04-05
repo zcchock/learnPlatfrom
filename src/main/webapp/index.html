@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/login.css" type="text/css">
     <script type="text/javascript" src="resources/js/.js"></script>
-
+    <!-- toastr -->
+    <link rel="stylesheet"
+          href="resources/js/toastr.js/2.1.2/toastr.min.css"/>  <!--路径不知道对不对-->
 </head>
 
 <body background="resources/images/backmap.jpg">
@@ -37,7 +39,7 @@
                         <label for="checkbox1"></label>
                     </div>
                     <span class="text">Remember me</span>
-                    <button type="submit" class="btn btn-default" id="loginSub" onclick="">登录</button>
+                    <button type="submit" class="btn btn-default" id="loginSub" onclick="userFunction.login()">登录</button>
                 </div>
             </form>
         </div>
@@ -51,5 +53,9 @@
 <!-- Additional scripts, split by space -->
 <input type="hidden" id="additional-scripts" value=""/>
 
+
+<!-- toastr -->
+<script
+        src="resources/js/toastr.js/2.1.2/toastr.min.js"></script>
 </body>
 </html>
