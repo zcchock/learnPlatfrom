@@ -14,6 +14,16 @@
         user_id = #{userId}
     </select>
 
+    <select id="queryUserByName" resultType="User" parameterType="String">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        USER
+        WHERE
+        account = #{account}
+    </select>
+
     <select id="queryAll" resultType="User">
         SELECT
         *

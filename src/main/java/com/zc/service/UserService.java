@@ -12,8 +12,5 @@ public interface UserService {
 
     DataResponse getAllUsers (DataRequest dataRequest);
 
-    DataResponse checkLogin (DataRequest dataRequest);
-
-
     DataResponse login (DataRequest dataRequest);
 }

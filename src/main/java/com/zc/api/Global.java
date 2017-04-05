@@ -1,7 +1,7 @@
 package com.zc.api;
 
 /**
- * Created by acris on 2016/6/24.
+ * Created by chock on 2017/4/5.
  */
 public class Global {
     /**

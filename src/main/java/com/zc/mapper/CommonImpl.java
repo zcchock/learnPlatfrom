@@ -1,10 +1,11 @@
-package com.zc.api.service;
+package com.zc.mapper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import com.zc.api.DataRequest;
 import com.zc.api.DataResponse;
+import com.zc.api.service.JsonMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 
 /**
- * Created by chock on 2016/10/19.
+ * Created by chock on 2017/4/5.
  */
 @Configuration
 public class CommonImpl {
@@ -64,9 +65,6 @@ public class CommonImpl {
     /**
      * 多表查询时，设置参数，构造DataTablesOutput
      *
-     * @param data
-     * @param keys
-     * @param input
      * @return
      */
   /*  public DataTablesOutput getDataTableOutput(List<Object> data, String[] keys, DataTablesInput input) {
