@@ -58,6 +58,7 @@ public class JsonMapper extends ObjectMapper {
                 jgen.writeString(StringEscapeUtils.unescapeHtml4(value));
             }
         }));
+
         // 设置时区
         this.setTimeZone(TimeZone.getDefault());//getTimeZone("GMT+8:00")
     }
