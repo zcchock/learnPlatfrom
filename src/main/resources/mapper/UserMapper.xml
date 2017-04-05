@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zc.mapper.UserMapper">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="queryUser" resultType="User" parameterType="Integer">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        USER
+        WHERE
+        user_id = #{userId}
+    </select>
+
+    <select id="queryUserByName" resultType="User" parameterType="String">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        USER
+        WHERE
+        account = #{account}
+    </select>
+
+    <select id="queryAll" resultType="User">
+        SELECT
+        *
+        FROM
+        user
+        ORDER BY
+        user_id
+        LIMIT #{offset}, #{limit}
+    </select>
+
+</mapper>
