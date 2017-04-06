@@ -52,15 +52,12 @@ public class UserServiceImpl implements UserService {
                //具体方法
                User user = userMapper.queryUserByName(inputUser);
                if (inputPassword.equals(user.getPassword())) {
-                   response.setStatus(Global.STATUS_YES);
-                   response.setMessage("允许登录");
-                   response.setData(Global.SUCCESS);
+                   response = commonImpl.responseDeal(response, Global.STATUS_YES, "允许登录", Global.SUCCESS);
                }
             }catch (Exception e){
                 System.out.println();
             }
             return commonImpl.responseDeal(response, Global.SUCCESS, "/main", "登陆成功");
-
     }
 
 }
