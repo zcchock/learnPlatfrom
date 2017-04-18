@@ -14,7 +14,7 @@ var userFunction = (function ($) {
             var reqdata = {
                 data: {
                     inputUser: inputUser,
-                    inputPassword: inputPassword,
+                    inputPassword: inputPassword
                 }
             }
             $.ajax({
@@ -25,7 +25,7 @@ var userFunction = (function ($) {
                 success: function (resp) {
                     if (resp.status === "success") {
                         var str = JSON.parse(resp.data);
-                        window.location.href = str;
+                        window.location.href = '../WEB-INF/main.html';
                         toastr["success"](resp.message, "成功提示");
                     } else {
                         toastr["error"](resp.message, "错误提示");
