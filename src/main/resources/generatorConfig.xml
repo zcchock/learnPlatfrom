@@ -42,8 +42,14 @@
         </javaClientGenerator>
 
         <!--对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等-->
-        <table tableName="USER" domainObjectName="User" >
-        </table>
+        <table tableName="USER" domainObjectName="User" />
+        <table tableName="ROLE" domainObjectName="Role" />
+        <table tableName="BOLG_ATC" domainObjectName="BlogAtc" />
+        <table tableName="BLOG_TYPE" domainObjectName="BlogType" />
+        <table tableName="MESSAGE" domainObjectName="Message" />
+        <table tableName="USER_ARTICLE" domainObjectName="UserArticle" />
+        <table tableName="USER_FRIEND" domainObjectName="UserFriend" />
+        <table tableName="USER_ROLE" domainObjectName="UserROle" />
 
     </context>
 </generatorConfiguration>
