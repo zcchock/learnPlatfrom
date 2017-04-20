@@ -45,19 +45,24 @@ public class UserServiceImpl implements UserService {
 
     public DataResponse login(DataRequest dataRequest) {
 
-            DataResponse response = new DataResponse();
-            String inputUser = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputUser", String.class, implClass);
-            String inputPassword = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputPassword", String.class, implClass);
-            try{
-               //具体方法
-               User user = userMapper.queryUserByName(inputUser);
-               if (inputPassword.equals(user.getPassword())) {
-                   response = commonImpl.responseDeal(response, Global.STATUS_YES, "允许登录", Global.SUCCESS);
-               }
-            }catch (Exception e){
-                System.out.println();
+        DataResponse response = new DataResponse();
+        String inputUser = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputUser", String.class, implClass);
+        String inputPassword = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputPassword", String.class, implClass);
+        try {
+            //具体方法
+            User user = userMapper.queryUserByName(inputUser);
+            System.out.println(user);
+            if (inputPassword.equals(user.getPassword())) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, "/main", "登陆成功");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, "/index", "密码错误");
             }
-            return commonImpl.responseDeal(response, Global.SUCCESS, "/main", "登陆成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(response.getData());
+        System.out.println(response);
+        return response;
     }
 
 }

@@ -3,7 +3,7 @@
  */
 var userFunction = (function ($) {
 
-    function errCallback() {
+    function errCallback(resp) {
         toastr["error"]("请求失败", "网络异常");
     }
 
@@ -17,21 +17,26 @@ var userFunction = (function ($) {
                     inputPassword: inputPassword
                 }
             }
+            toastr["info"]("正在登陆，请稍候。", "提示");
             $.ajax({
                 url: "/user/login",
                 contentType: "application/json",
-                type: "post",
+                type: "POST",
                 data: JSON.stringify(reqdata),
                 success: function (resp) {
                     if (resp.status === "success") {
-                        var str = JSON.parse(resp.data);
-                        window.location.href = '../WEB-INF/main.html';
+                         var str = JSON.parse(resp.data);
+                        window.location.href = '/main.html';
                         toastr["success"](resp.message, "成功提示");
                     } else {
                         toastr["error"](resp.message, "错误提示");
                     }
                 },
-                error: errCallback
+                // error: errCallback
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest, textStatus, errorThrown);
+                    toastr["error"]("请求失败", "网络异常");
+                }
             });
         }
     };

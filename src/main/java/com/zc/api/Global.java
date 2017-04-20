@@ -4,10 +4,6 @@ package com.zc.api;
  * Created by chock on 2017/4/5.
  */
 public class Global {
-    /**
-     * API根路径
-     */
-    public static final String API_ROOT = "/dashboard/api";
     
     /**
      * 会话参数
@@ -19,8 +15,6 @@ public class Global {
     public static final String SYS_SESSION_BNK_CD = "bnkCd";
     
     public static final String LOGIN_TYPE = "userLogin";
-
-
 
 
 

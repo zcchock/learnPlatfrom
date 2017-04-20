@@ -34,15 +34,16 @@ public class UserController {
     public DataResponse Userlist(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
-        UserService userService = applicationContext.getBean("userService", UserService.class);
         DataResponse dataResponse = userService.getUserById(dataRequest);
         return dataResponse;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public DataResponse userLogin(DataRequest dataRequest) {
+    public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
+        String clientIp = request.getRemoteAddr();
+        dataRequest.setClientIp(clientIp);
         DataResponse dataResponse = userService.login(dataRequest);
-        return  dataResponse;
+        return dataResponse;
     }
 
 }

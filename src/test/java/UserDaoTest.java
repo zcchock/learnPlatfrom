@@ -20,14 +20,14 @@ public class UserDaoTest extends BaseTest{
     public void testQueryById() throws Exception {
         int userId = 1;
         DataRequest dataRequest = new DataRequest();
-        dataRequest.setData(1);
+        dataRequest.setData(userId);
         DataResponse dataResponse = userService.getUserById(dataRequest);
         System.out.println(dataResponse.getData());
     }
 
     /*@Test
     public void testQueryAll() throws Exception {
-        List<User> users = userService.queryAll(0, 4);
+        List<User> users = userService.getAllUsers(0, 4);
         for (User user : users) {
             System.out.println(user);
         }

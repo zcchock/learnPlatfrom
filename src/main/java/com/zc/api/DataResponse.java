@@ -1,9 +1,11 @@
 package com.zc.api;
 
+import java.io.Serializable;
+
 /**
  * Created by chock on 2017/4/3.
  */
-public class DataResponse {
+public class DataResponse implements Serializable {
 
     private String status = "error";    // status: success or error
     private String code = "200";
