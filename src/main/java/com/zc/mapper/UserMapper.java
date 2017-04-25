@@ -13,5 +13,9 @@ public interface UserMapper {
 
     User queryUserByName(String account);
 
-    List<User> queryAll(int offset, int limit);
+    List<User> queryAll();
+
+    int countUser();
+
+    int insertUser(User user);
 }

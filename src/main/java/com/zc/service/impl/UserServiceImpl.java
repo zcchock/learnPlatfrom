@@ -36,11 +36,8 @@ public class UserServiceImpl implements UserService {
 
     public DataResponse getAllUsers(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
-        response.setStatus("1");
-        List<User> list = userMapper.queryAll(0, 4);
-        response.setData(list);
-        response.setMessage("成功查询用户列表");
-        return response;
+        List<User> list = userMapper.queryAll();
+        return commonImpl.responseDeal(response, Global.SUCCESS, list, "查询用户列表成功");
     }
 
     public DataResponse login(DataRequest dataRequest) {
@@ -53,7 +50,7 @@ public class UserServiceImpl implements UserService {
             User user = userMapper.queryUserByName(inputUser);
             System.out.println(user);
             if (inputPassword.equals(user.getPassword())) {
-                response = commonImpl.responseDeal(response, Global.SUCCESS, "/main", "登陆成功");
+                response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser", "登陆成功");
             } else {
                 response = commonImpl.responseDeal(response, Global.ERROR, "/index", "密码错误");
             }
@@ -63,6 +60,29 @@ public class UserServiceImpl implements UserService {
         System.out.println(response.getData());
         System.out.println(response);
         return response;
+    }
+
+    public DataResponse countNum() {
+        DataResponse response = new DataResponse();
+        try {
+            //具体方法
+            int userNum = userMapper.countUser();
+            System.out.println(userNum);
+            if (userNum != 0) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser", "登陆成功");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, "/index", "密码错误");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(response.getData());
+        return response;
+    }
+
+    public DataResponse addUser(DataRequest dataRequest) {
+        DataResponse response = new DataResponse();
+        return null;
     }
 
 }

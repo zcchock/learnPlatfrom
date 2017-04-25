@@ -1,7 +1,7 @@
 /**
  * Created by chock on 2017/4/5.
  */
-var userFunction = (function ($) {
+var loginFunction = (function ($) {
 
     function errCallback(resp) {
         toastr["error"]("请求失败", "网络异常");
@@ -26,17 +26,14 @@ var userFunction = (function ($) {
                 success: function (resp) {
                     if (resp.status === "success") {
                          var str = JSON.parse(resp.data);
-                        window.location.href = '/main.html';
+                        window.location.href = str + '.html';
                         toastr["success"](resp.message, "成功提示");
                     } else {
                         toastr["error"](resp.message, "错误提示");
                     }
                 },
                 // error: errCallback
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log(XMLHttpRequest, textStatus, errorThrown);
-                    toastr["error"]("请求失败", "网络异常");
-                }
+                error: errCallback
             });
         }
     };

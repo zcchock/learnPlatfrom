@@ -13,4 +13,8 @@ public interface UserService {
     DataResponse getAllUsers (DataRequest dataRequest);
 
     DataResponse login (DataRequest dataRequest);
+
+    DataResponse countNum ();
+
+    DataResponse addUser(DataRequest dataRequest);
 }

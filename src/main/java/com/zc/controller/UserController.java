@@ -31,15 +31,23 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/list",method = RequestMethod.POST)
-    public DataResponse Userlist(@RequestBody(required = false) DataRequest dataRequest) {
+    public DataResponse userList(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
-        DataResponse dataResponse = userService.getUserById(dataRequest);
+        DataResponse dataResponse = userService.getAllUsers(dataRequest);
         return dataResponse;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
+        String clientIp = request.getRemoteAddr();
+        dataRequest.setClientIp(clientIp);
+        DataResponse dataResponse = userService.login(dataRequest);
+        return dataResponse;
+    }
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
+    public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
         DataResponse dataResponse = userService.login(dataRequest);
