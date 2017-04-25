@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>用户管理</title>
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/resources/js/user.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- toastr -->
+    <script src="/resources/js/toastr/2.1.2/toastr.min.js"></script>
+    <!-- toastr -->
+    <script src="/resources/js/bootbox/4.4.0/bootbox.min.js"></script>
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/js/toastr/2.1.2/toastr.min.css"/>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>SpringMVC 博客系统-用户管理</h1>
+    <hr/>
+    <h3>所有用户</h3>
+
+    <div class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>User表为空，请
+        <button type="button" class="btn btn-primary btn-sm" id="add-btn" onclick="userFunction.addUser()">添加</button>
+    </div>
+
+    <div class="box-body">
+        <table class="table table-bordered table-striped datatables-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>昵称</th>
+                <th>姓名</th>
+                <th>密码</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="userListTable"/>
+
+        </table>
+    </div>
+
+</div>
+
+<!-- form template -->
+<script id="user-add-form" type="text/html">
+    <div class="form-group">
+        <label for="add-account">Account:</label>
+        <input type="text" class="form-control" id="add-account" placeholder="Enter Account:"/>
+    </div>
+    <div class="form-group">
+        <label for="add-name">Name:</label>
+        <input type="text" class="form-control" id="add-name" placeholder="Enter Name:"/>
+    </div>
+    <div class="form-group">
+        <label for="add-sex">Sex:</label>
+        <input type="text" class="form-control" id="add-sex" placeholder="Enter Sex:"/>
+    </div>
+    <div class="form-group">
+        <label for="add-password">Password:</label>
+        <input type="text" class="form-control" id="add-password" placeholder="Enter Password:"/>
+    </div>
+    <div class="form-group">
+        <label for="add-email">Email:</label>
+        <input type="email" class="form-control" id="add-email" placeholder="Enter Email:"/>
+    </div>
+    <div class="form-group">
+        <label for="add-phone">Phone:</label>
+        <input type="text" class="form-control" id="add-phone" placeholder="Enter Phone:"/>
+    </div>
+</script>
+
+
+</body>
+</html>
