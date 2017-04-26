@@ -95,7 +95,7 @@ var userFunction = (function ($) {
                                 method: "POST",
                                 data: JSON.stringify(resData),
                                 success: function (resp) {
-                                    if (resp.success === 'success') {
+                                    if (resp.status === "success") {
                                         toastr["success"](resp.message, "成功提示");
                                     } else {
                                         toastr["error"](resp.message, "错误提示");

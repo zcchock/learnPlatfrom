@@ -73,7 +73,7 @@
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="userId != null">
-                #{user_id,jdbcType=INTEGER},
+                #{userId,jdbcType=INTEGER},
             </if>
             <if test="account != null">
                 #{account,jdbcType=VARCHAR},
@@ -85,7 +85,7 @@
                 #{password,jdbcType=VARCHAR},
             </if>
             <if test="roleId != null">
-                #{role_id,jdbcType=VARCHAR},
+                #{roleId,jdbcType=VARCHAR},
             </if>
             <if test="sex != null">
                 #{sex,jdbcType=VARCHAR},

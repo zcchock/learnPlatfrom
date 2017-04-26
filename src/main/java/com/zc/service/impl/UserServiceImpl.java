@@ -85,17 +85,19 @@ public class UserServiceImpl implements UserService {
 
     public DataResponse addUser(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
-        User inputUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);
-        inputUser.setUserId(userMapper.countUser() + 1);
-        inputUser.setRoleId("1");
-        inputUser.setLastLoginTime(dateUtils.formatDateTimeN(new Date()));
-        System.out.println(inputUser);
-        int sucFlag = userMapper.insertSelective(inputUser);
-        System.out.println(sucFlag);
-        if (sucFlag == 1) {
-            response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "添加成功");
-        } else {
-            response = commonImpl.responseDeal(response, Global.ERROR, sucFlag, "添加失败");
+        try {
+            User inputUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);
+            inputUser.setUserId(userMapper.countUser() + 1);
+            inputUser.setRoleId("1");
+            inputUser.setLastLoginTime(dateUtils.formatDateTimeN(new Date()));
+            int sucFlag = userMapper.insertSelective(inputUser);
+            if (sucFlag == 1) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "添加成功");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, sucFlag, "添加失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return response;
     }
