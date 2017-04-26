@@ -12,10 +12,11 @@ import java.util.Locale;
 /**
  * Created by chock on 2017/4/3.
  */
+/**
+ * 日期
+ * Created by acris on 2016/6/27.
+ */
 public class DateUtils {
-
-    private static Logger LOGGER = LoggerFactory.getLogger(DateUtils.class);
-
     /**
      * 毫秒
      */
@@ -36,11 +37,16 @@ public class DateUtils {
      * 每天的毫秒数
      */
     public final static long DAY_MS = HOUR_MS * 24;
-
     /**
      * 标准日期格式
      */
     public final static String NORM_DATE_PATTERN = "yyyy-MM-dd";
+
+    /**
+     * 标准日期格式2
+     * updated by yy
+     */
+    public final static String NORM_DATE_PATTERN1 = "yyyyMMdd";
     /**
      * 标准时间格式
      */
@@ -50,14 +56,24 @@ public class DateUtils {
      */
     public final static String NORM_DATETIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
     /**
+     * 标准日期时间格式
+     * updated by yy
+     */
+    public final static String NORM_DATETIME_PATTERN1 = "yyyyMMddHHmmss";
+    /**
      * HTTP头中日期时间格式
      */
     public final static String HTTP_DATETIME_PATTERN = "EEE, dd MMM yyyy HH:mm:ss z";
-
     /**
      * 标准日期（不含时间）格式化器
      */
     private final static SimpleDateFormat NORM_DATE_FORMAT = new SimpleDateFormat(NORM_DATE_PATTERN);
+
+    /**
+     * 标准日期（不含时间）格式化器
+     * upfated by yy
+     */
+    private final static SimpleDateFormat NORM_DATE_FORMAT1 = new SimpleDateFormat(NORM_DATE_PATTERN1);
     /**
      * 标准时间格式化器
      */
@@ -67,9 +83,15 @@ public class DateUtils {
      */
     private final static SimpleDateFormat NORM_DATETIME_FORMAT = new SimpleDateFormat(NORM_DATETIME_PATTERN);
     /**
+     * 标准日期时间格式化器
+     * updated by yy
+     */
+    private final static SimpleDateFormat NORM_DATETIME_FORMAT1 = new SimpleDateFormat(NORM_DATETIME_PATTERN1);
+    /**
      * HTTP日期时间格式化器
      */
     private final static SimpleDateFormat HTTP_DATETIME_FORMAT = new SimpleDateFormat(HTTP_DATETIME_PATTERN, Locale.US);
+    private static Logger LOGGER = LoggerFactory.getLogger(DateUtils.class);
 
     /**
      * 当前时间，格式 yyyy-MM-dd HH:mm:ss
@@ -112,6 +134,17 @@ public class DateUtils {
     }
 
     /**
+     * 格式 yyyyMMddHHmmss
+     *
+     * @param date 被格式化的日期
+     * @return 格式化后的日期
+     * updated by yy
+     */
+    public static String formatDateTimeN(Date date) {
+        return NORM_DATETIME_FORMAT1.format(date);
+    }
+
+    /**
      * 格式化为Http的标准日期格式
      *
      * @param date 被格式化的日期
@@ -129,6 +162,17 @@ public class DateUtils {
      */
     public static String formatDate(Date date) {
         return NORM_DATE_FORMAT.format(date);
+    }
+
+    /**
+     * 格式 yyyyMMdd
+     *
+     * @param date 被格式化的日期
+     * @return 格式化后的字符串
+     * update by yy
+     */
+    public static String formatDateN(Date date) {
+        return NORM_DATE_FORMAT1.format(date);
     }
 
     /**
@@ -245,6 +289,30 @@ public class DateUtils {
     }
 
     /**
+     *
+     */
+    /**
+     * 天数的增加
+     *
+     * @return 增加后的日期
+     */
+    public static Date adddays(int days) {
+        return offsiteDate(new Date(), Calendar.DAY_OF_YEAR, days);
+    }
+
+    /**
+     *
+     */
+    /**
+     * 月份的增加
+     *
+     * @return 增加后的月
+     */
+    public static Date addMouth(int months) {
+        return offsiteDate(new Date(), Calendar.MONTH, months);
+    }
+
+    /**
      * 获取指定日期偏移指定时间后的时间
      *
      * @param date          基准日期
@@ -292,5 +360,4 @@ public class DateUtils {
     public static long spendMs(long preTime) {
         return System.currentTimeMillis() - preTime;
     }
-
 }

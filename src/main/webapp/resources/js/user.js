@@ -31,7 +31,7 @@ var userFunction = (function ($) {
                     '<th>' + tables[arr].account + '</th>' +
                     '<th>' + tables[arr].name + '</th>' +
                     '<th>' + tables[arr].password + '</th>' +
-                    '<th><button type="button" class="btn btn-default" id="detail">查看详情</button></th></tr>';
+                    '<th><button type="button" class="btn btn-primary" id="detail">查看详情</button></th></tr>';
             }
         }
         $(id).empty();
@@ -68,22 +68,24 @@ var userFunction = (function ($) {
                         label: "保存",
                         className: "btn-primary",
                         callback: function () {
-                            var account = $("#form-account").val();
-                            var name = $("#form-name").val();
-                            var sex = $("#form-sex").val();
-                            var password = $("#form-password").val();
-                            var email = $("#form-email").val();
-                            var phone = $("#form-phone").val();
+                            var account = $("#add-account").val();
+                            var name = $("#add-name").val();
+                            var sex = $("#add-sex").val();
+                            var password = $("#add-password").val();
+                            var email = $("#add-email").val();
+                            var phone = $("#add-phone").val();
 
                             // validation here
                             var resData = {
                                 data: {
-                                    account: account,
-                                    name: name,
-                                    sex: sex,
-                                    password: password,
-                                    email: email,
-                                    phone: phone
+                                    user:{
+                                        account: account,
+                                        name: name,
+                                        sex: sex,
+                                        password: password,
+                                        email: email,
+                                        phone: phone
+                                    }
                                 }
                             }
                             toastr["info"]("正在保存，请稍候。", "提示");
@@ -93,7 +95,7 @@ var userFunction = (function ($) {
                                 method: "POST",
                                 data: JSON.stringify(resData),
                                 success: function (resp) {
-                                    if (resp.success === 'true') {
+                                    if (resp.success === 'success') {
                                         toastr["success"](resp.message, "成功提示");
                                     } else {
                                         toastr["error"](resp.message, "错误提示");

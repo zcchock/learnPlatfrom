@@ -50,7 +50,7 @@ public class UserController {
     public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
-        DataResponse dataResponse = userService.login(dataRequest);
+        DataResponse dataResponse = userService.addUser(dataRequest);
         return dataResponse;
     }
 

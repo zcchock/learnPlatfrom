@@ -41,7 +41,7 @@
     </select>
 
     <insert id="insertSelective" parameterType="com.zc.entity.User">
-        insert into yw_user
+        insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userId != null">
                 user_id,
