@@ -38,6 +38,14 @@ public class UserController {
         return dataResponse;
     }
 
+    @RequestMapping(value = "/getUser",method = RequestMethod.POST)
+    public DataResponse getUserById(@RequestBody(required = false) DataRequest dataRequest) {
+        String clientIp = request.getRemoteAddr();
+        dataRequest.setClientIp(clientIp);
+        DataResponse dataResponse = userService.getUserById(dataRequest);
+        return dataResponse;
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

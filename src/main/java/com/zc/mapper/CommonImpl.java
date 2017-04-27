@@ -62,30 +62,15 @@ public class CommonImpl {
         return response;
     }
 
-    /**
-     * 多表查询时，设置参数，构造DataTablesOutput
-     *
-     * @return
-     */
-  /*  public DataTablesOutput getDataTableOutput(List<Object> data, String[] keys, DataTablesInput input) {
-        List<Map<String, Object>> resultList = ObjectToMap.objectChangeMap(data, keys);
-        DataTablesOutput<Map<String, Object>> mchntCertTablesOutput = new DataTablesOutput<>();
-        mchntCertTablesOutput.setDraw(input.getDraw());
-        mchntCertTablesOutput.setData(resultList);
-        mchntCertTablesOutput.setRecordsFiltered(resultList.size());
-        mchntCertTablesOutput.setRecordsTotal(resultList.size());
-        return mchntCertTablesOutput;
-    }*/
-
 
     //获取usrId,当设置创建人，最后更新操作人员时时
     public String getUserId(DataRequest dataRequest) {
-       return "";
-    }
-    public String getLoginType() {
-       return "";
+        return "";
     }
 
+    public String getLoginType() {
+        return "";
+    }
 
 
     /**
@@ -95,12 +80,9 @@ public class CommonImpl {
      * @param Msg    描述内容
      */
     public void getDebugLog(Class logCls, String Msg) {
-
         Logger LOGGER = LoggerFactory.getLogger(logCls);
         LOGGER.debug("当前服务：" + Msg);
-
     }
-
 
 
     /**
@@ -127,6 +109,5 @@ public class CommonImpl {
         }
         return obj;
     }
-
 
 }

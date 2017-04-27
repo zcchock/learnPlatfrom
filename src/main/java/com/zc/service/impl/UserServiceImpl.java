@@ -30,10 +30,17 @@ public class UserServiceImpl implements UserService {
 
     public DataResponse getUserById(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
-        response.setStatus("1");
-        User user = userMapper.queryUser((Integer) dataRequest.getData());
-        response.setData(user);
-        response.setMessage("成功查询用户信息");
+        Integer userId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "userId", Integer.class, implClass);
+        try {
+            User user = userMapper.queryUser(userId);
+            if (user != null) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, user, "成功查询用户信息");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, user, "查询用户信息失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return response;
     }
 
@@ -60,8 +67,6 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(response.getData());
-        System.out.println(response);
         return response;
     }
 
