@@ -17,4 +17,6 @@ public interface UserService {
     DataResponse countNum ();
 
     DataResponse addUser(DataRequest dataRequest);
+
+    DataResponse delUser(DataRequest dataRequest);
 }

@@ -107,4 +107,20 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    public DataResponse delUser(DataRequest dataRequest) {
+        DataResponse response = new DataResponse();
+        Integer userId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "userId", Integer.class, implClass);
+        try {
+            int sucFlag = userMapper.delUserById(userId);
+            if (sucFlag == 1) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "删除用户成功");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, sucFlag, "删除用户失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
 }

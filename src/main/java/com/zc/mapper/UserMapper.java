@@ -20,4 +20,6 @@ public interface UserMapper {
 //    int insertUser(User user);
 
     int insertSelective(User user);
+
+    int delUserById(int userId);
 }

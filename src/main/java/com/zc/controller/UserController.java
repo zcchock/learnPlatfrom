@@ -62,4 +62,12 @@ public class UserController {
         return dataResponse;
     }
 
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public DataResponse delUser(@RequestBody(required = false) DataRequest dataRequest) {
+        String clientIp = request.getRemoteAddr();
+        dataRequest.setClientIp(clientIp);
+        DataResponse dataResponse = userService.delUser(dataRequest);
+        return dataResponse;
+    }
+
 }

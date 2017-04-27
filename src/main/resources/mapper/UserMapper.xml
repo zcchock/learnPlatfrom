@@ -102,4 +102,12 @@
         </trim>
     </insert>
 
+    <delete id="delUserById" parameterType="Integer">
+        DELETE
+        FROM
+        user
+        WHERE
+        user_id = #{userId}
+    </delete>
+
 </mapper>
