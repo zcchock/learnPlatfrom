@@ -126,7 +126,6 @@ var userFunction = (function ($) {
                 $("#detail-phone").val(user.phone);
                 $("#detail-lastLogin").val(user.lastLoginTime);
             }
-
             $.ajax({
                 url: "/user/getUser",
                 contentType: "application/json",
@@ -173,6 +172,7 @@ var userFunction = (function ($) {
                         success: function (resp) {
                             if (resp.status === 'success') {
                                 toastr["success"](resp.message, "成功提示");
+                                location.reload(false);
                             } else {
                                 toastr["error"](resp.message, "错误提示");
                             }
