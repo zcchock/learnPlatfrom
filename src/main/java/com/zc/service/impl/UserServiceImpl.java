@@ -8,6 +8,7 @@ import com.zc.mapper.CommonImpl;
 import com.zc.mapper.UserMapper;
 import com.zc.entity.User;
 import com.zc.service.UserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,7 +52,6 @@ public class UserServiceImpl implements UserService {
     }
 
     public DataResponse login(DataRequest dataRequest) {
-
         DataResponse response = new DataResponse();
         String inputUser = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputUser", String.class, implClass);
         String inputPassword = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputPassword", String.class, implClass);
@@ -116,6 +116,24 @@ public class UserServiceImpl implements UserService {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "删除用户成功");
             } else {
                 response = commonImpl.responseDeal(response, Global.ERROR, sucFlag, "删除用户失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    public DataResponse updateUser(DataRequest dataRequest) {
+        DataResponse response = new DataResponse();
+        User newUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);
+        //        Integer userId = newUser.getUserId();
+        //        User oldUser = userMapper.queryUser(userId);
+        try {
+            int sucFlag = userMapper.updateById(newUser);
+            if (sucFlag == 1) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "用户更新成功");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, sucFlag, "用户更新失败");
             }
         } catch (Exception e) {
             e.printStackTrace();

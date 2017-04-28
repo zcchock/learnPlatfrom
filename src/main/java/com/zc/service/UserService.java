@@ -19,4 +19,6 @@ public interface UserService {
     DataResponse addUser(DataRequest dataRequest);
 
     DataResponse delUser(DataRequest dataRequest);
+
+    DataResponse updateUser(DataRequest dataRequest);
 }

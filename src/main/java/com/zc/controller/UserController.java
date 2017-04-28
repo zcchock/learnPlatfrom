@@ -30,7 +30,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/list",method = RequestMethod.POST)
+    /**
+     * 用户列表查询；用于展示数据
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequestMapping(value = "/list", method = RequestMethod.POST)
     public DataResponse userList(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
@@ -38,7 +44,13 @@ public class UserController {
         return dataResponse;
     }
 
-    @RequestMapping(value = "/getUser",method = RequestMethod.POST)
+    /**
+     * 根据Id获取用户信息
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     public DataResponse getUserById(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
@@ -46,6 +58,12 @@ public class UserController {
         return dataResponse;
     }
 
+    /**
+     * 登录时的检验功能
+     *
+     * @param dataRequest
+     * @return
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -54,6 +72,12 @@ public class UserController {
         return dataResponse;
     }
 
+    /**
+     * 插入新用户
+     *
+     * @param dataRequest
+     * @return
+     */
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -62,11 +86,31 @@ public class UserController {
         return dataResponse;
     }
 
+    /**
+     * 删除用户
+     *
+     * @param dataRequest
+     * @return
+     */
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public DataResponse delUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
         DataResponse dataResponse = userService.delUser(dataRequest);
+        return dataResponse;
+    }
+
+    /**
+     * 用户更新
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public DataResponse updateUser(@RequestBody(required = false) DataRequest dataRequest) {
+        String clientIp = request.getRemoteAddr();
+        dataRequest.setClientIp(clientIp);
+        DataResponse dataResponse = userService.updateUser(dataRequest);
         return dataResponse;
     }
 

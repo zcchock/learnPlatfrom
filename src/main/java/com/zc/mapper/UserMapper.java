@@ -22,4 +22,6 @@ public interface UserMapper {
     int insertSelective(User user);
 
     int delUserById(int userId);
+
+    int updateById(User user);
 }
