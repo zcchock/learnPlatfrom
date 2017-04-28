@@ -29,6 +29,12 @@ public class UserServiceImpl implements UserService {
     private CommonImpl commonImpl = new CommonImpl();
     private DateUtils dateUtils = new DateUtils();
 
+    /**
+     * 通过ID查询用户
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse getUserById(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         Integer userId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "userId", Integer.class, implClass);
@@ -45,12 +51,24 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 获取全部用户（用户列表）
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse getAllUsers(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         List<User> list = userMapper.queryAll();
         return commonImpl.responseDeal(response, Global.SUCCESS, list, "查询用户列表成功");
     }
 
+    /**
+     * 登录
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse login(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         String inputUser = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputUser", String.class, implClass);
@@ -70,6 +88,11 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 用户计数（初步用于ID确定，后期可能不要）
+     *
+     * @return
+     */
     public DataResponse countNum() {
         DataResponse response = new DataResponse();
         try {
@@ -88,6 +111,12 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 插入用户
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse addUser(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         try {
@@ -107,6 +136,12 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 删除用户
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse delUser(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         Integer userId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "userId", Integer.class, implClass);
@@ -123,6 +158,12 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 更新用户信息
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse updateUser(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         User newUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);

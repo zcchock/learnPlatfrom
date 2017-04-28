@@ -5,7 +5,6 @@ var userFunction = (function ($) {
 
     $(function () {
         var reqdata = {
-            data: {}
         }
         $.ajax({
             url: "/user/list",
@@ -58,6 +57,7 @@ var userFunction = (function ($) {
 
     //Functions
     return {
+
         /*新增用户*/
         addUser: function () {
             var formHtml = $("#user-add-form").html();
@@ -112,6 +112,7 @@ var userFunction = (function ($) {
                 }
             });
         },
+
         /*查看用户详情*/
         viewUser: function (event) {
             var userId = (event.target.id).substring(7, (event.target.id).length);
@@ -158,6 +159,7 @@ var userFunction = (function ($) {
                 error: errCallback
             })
         },
+
         /*删除用户*/
         deleteUser: function (event) {
             var userId = (event.target.id).substring(8, (event.target.id).length);
@@ -188,6 +190,7 @@ var userFunction = (function ($) {
                 }
             })
         },
+
         /*更新用户信息*/
         updateUser: function (event) {
             //初始化文本框的内容
@@ -199,7 +202,6 @@ var userFunction = (function ($) {
                 $("#update-email").val(user.email);
                 $("#update-phone").val(user.phone);
             }
-
             var userId = (event.target.id).substring(7, (event.target.id).length);
             var reqData = {
                 data: {
@@ -207,7 +209,6 @@ var userFunction = (function ($) {
                 }
             };
             var formHtml = $("#user-update-form").html();
-
             $.ajax({
                 url: "/user/getUser",
                 contentType: "application/json",
@@ -274,8 +275,6 @@ var userFunction = (function ($) {
                 },
                 error: errCallback
             })
-
-
         }
     }
 })($);

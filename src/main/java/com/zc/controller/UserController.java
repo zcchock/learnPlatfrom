@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/user")
 public class UserController {
 
+    //日志打印
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
     @Autowired

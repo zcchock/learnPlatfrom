@@ -17,8 +17,6 @@ public interface UserMapper {
 
     int countUser();
 
-//    int insertUser(User user);
-
     int insertSelective(User user);
 
     int delUserById(int userId);
