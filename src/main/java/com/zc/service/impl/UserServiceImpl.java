@@ -121,7 +121,7 @@ public class UserServiceImpl implements UserService {
         DataResponse response = new DataResponse();
         try {
             User inputUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);
-            inputUser.setUserId(userMapper.countUser() + 1);
+//            inputUser.setUserId(userMapper.countUser() + 1);
             inputUser.setRoleId("1");
             inputUser.setLastLoginTime(dateUtils.formatDateTimeN(new Date()));
             int sucFlag = userMapper.insertSelective(inputUser);

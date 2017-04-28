@@ -31,9 +31,9 @@ var userFunction = (function ($) {
                     '<th>' + tables[arr].account + '</th>' +
                     '<th>' + tables[arr].name + '</th>' +
                     '<th>' + tables[arr].password + '</th>' +
-                    '<th><button type="button" class="btn btn-info" id="detail-' + Number(arr) + '" onclick="userFunction.viewUser(event)">查看详情</button>' +
-                    '<button type="button" class="btn btn-primary" id="update-' + Number(arr) + '" onclick="userFunction.updateUser(event)">修改用户</button>' +
-                    '<button type="button" class="btn btn-danger" id="delUser-' + Number(arr) + '" onclick="userFunction.deleteUser(event)">删除用户</button></th></tr>';
+                    '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].userId + '" onclick="userFunction.viewUser(event)">查看详情</button>' +
+                    '<button type="button" class="btn btn-primary" id="update-' + tables[arr].userId + '" onclick="userFunction.updateUser(event)">修改用户</button>' +
+                    '<button type="button" class="btn btn-danger" id="delUser-' + tables[arr].userId + '" onclick="userFunction.deleteUser(event)">删除用户</button></th></tr>';
             }
         }
         $(id).empty();
@@ -118,7 +118,7 @@ var userFunction = (function ($) {
             var userId = (event.target.id).substring(7, (event.target.id).length);
             var reqData = {
                 data: {
-                    userId: Number(userId) + 1
+                    userId: Number(userId)
                 }
             };
             var formHtml = $("#user-detail-form").html();
@@ -165,7 +165,7 @@ var userFunction = (function ($) {
             var userId = (event.target.id).substring(8, (event.target.id).length);
             var reqData = {
                 data: {
-                    userId: Number(userId) + 1
+                    userId: Number(userId)
                 }
             };
             bootbox.confirm({
@@ -205,7 +205,7 @@ var userFunction = (function ($) {
             var userId = (event.target.id).substring(7, (event.target.id).length);
             var reqData = {
                 data: {
-                    userId: Number(userId) + 1
+                    userId: Number(userId)
                 }
             };
             var formHtml = $("#user-update-form").html();
