@@ -4,23 +4,89 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zc.mapper.BlogAtcMapper">
 
-    <insert id="insertBlogAtc">
-        <!-- ignore 主键冲突，报错 -->
-        INSERT ignore INTO blog_atc (atc_id)
-        VALUES (#{atcId})
-    </insert>
-
-
-    <select id="queryByKey" resultType="BlogAtc">
-        <!-- 如何告诉MyBatis把结果映射到Appointment同时映射book属性 -->
-        <!-- 可以自由控制SQL -->
-        SELECT
-        atc_id,
-        atc_title,
-        atc_type
-        FROM
+    <select id="queryAtc" resultType="BlogAtc" parameterType="Integer">
+        SELECT * FROM
         blog_atc
         WHERE
         atc_id = #{atcId}
     </select>
+
+    <select id="queryAll" resultType="BlogAtc">
+        SELECT * FROM
+        blog_atc
+        ORDER BY
+        atc_id
+    </select>
+
+    <insert id="insertSelective" parameterType="com.zc.entity.BlogAtc">
+        insert into blog_atc
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="atcId != null">
+                atc_id,
+            </if>
+            <if test="atcTitle != null">
+                atc_title,
+            </if>
+            <if test="atcUrl != null">
+                atc_url,
+            </if>
+            <if test="atcType != null">
+                atc_type,
+            </if>
+            <if test="atcTime != null">
+                atc_time,
+            </if>
+            <if test="atcView != null">
+                atc_view,
+            </if>
+            <if test="atcFlag != null">
+                atc_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="atcId != null">
+                #{atcId,jdbcType=INTEGER},
+            </if>
+            <if test="atcTitle != null">
+                #{atcTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="atcUrl != null">
+                #{atcUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="atcType != null">
+                #{atcType,jdbcType=VARCHAR},
+            </if>
+            <if test="atcTime != null">
+                #{atcTime,jdbcType=VARCHAR},
+            </if>
+            <if test="atcView != null">
+                #{atcView,jdbcType=INTEGER},
+            </if>
+            <if test="atcFlag != null">
+                #{atcFlag,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateById" parameterType="com.zc.entity.BlogAtc">
+        update blog_atc
+        <set>
+            <if test="name != null">
+                atc_title = #{atcTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                atc_type = #{atcType,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where atc_id = #{atcId,jdbcType=INTEGER}
+    </update>
+
+    <delete id="delAtcById" parameterType="Integer">
+        DELETE
+        FROM
+        blog_atc
+        WHERE
+        atc_id = #{atcId}
+    </delete>
+
 </mapper>

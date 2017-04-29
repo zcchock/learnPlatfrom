@@ -33,6 +33,7 @@ var userFunction = (function ($) {
                     '<th>' + tables[arr].password + '</th>' +
                     '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].userId + '" onclick="userFunction.viewUser(event)">查看详情</button>' +
                     '<button type="button" class="btn btn-primary" id="update-' + tables[arr].userId + '" onclick="userFunction.updateUser(event)">修改用户</button>' +
+                    '<button type="button" class="btn btn-primary" id="article-' + tables[arr].userId + '" onclick="userFunction.updateUser(event)">用户文章</button>' +
                     '<button type="button" class="btn btn-danger" id="delUser-' + tables[arr].userId + '" onclick="userFunction.deleteUser(event)">删除用户</button></th></tr>';
             }
         }

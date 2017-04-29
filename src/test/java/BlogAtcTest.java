@@ -12,16 +12,9 @@ public class BlogAtcTest extends BaseTest {
     private BlogAtcMapper blogAtcMapper;
 
     @Test
-    public void testInsert() throws Exception {
-        int atcId = 1;
-        int flag = blogAtcMapper.insertBlogAtc(atcId);
-        System.out.println("insert=" + flag);
-    }
-
-    @Test
     public void testQueryByKey() throws Exception {
         int atcId = 1;
-        BlogAtc blogAtc = blogAtcMapper.queryByKey(atcId);
+        BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
         System.out.println(blogAtc);
         System.out.println(blogAtc.getAtcId());
     }
