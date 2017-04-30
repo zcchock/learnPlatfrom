@@ -18,6 +18,17 @@
         atc_id
     </select>
 
+    <select id="queryActsByUid" resultType="com.zc.entity.BlogAtc">
+        SELECT * FROM blog_atc
+        WHERE blog_atc.atc_id IN (
+        SELECT atc_id FROM user_article
+        WHERE
+        user_id = #{userId}
+        AND
+        blog_atc.atc_id = user_article.atc_id
+        )
+    </select>
+
     <insert id="insertSelective" parameterType="com.zc.entity.BlogAtc">
         insert into blog_atc
         <trim prefix="(" suffix=")" suffixOverrides=",">

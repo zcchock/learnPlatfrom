@@ -21,4 +21,5 @@ public interface UserService {
     DataResponse delUser(DataRequest dataRequest);
 
     DataResponse updateUser(DataRequest dataRequest);
+
 }

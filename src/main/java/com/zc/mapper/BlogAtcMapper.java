@@ -19,4 +19,5 @@ public interface BlogAtcMapper {
 
     int updateById(BlogAtc blogAtc);
 
+    List<BlogAtc> queryActsByUid(int userId);
 }

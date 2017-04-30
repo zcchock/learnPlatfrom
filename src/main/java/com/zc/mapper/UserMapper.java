@@ -1,5 +1,6 @@
 package com.zc.mapper;
 
+import com.zc.entity.BlogAtc;
 import com.zc.entity.User;
 
 import java.util.List;
@@ -22,4 +23,5 @@ public interface UserMapper {
     int delUserById(int userId);
 
     int updateById(User user);
+
 }
