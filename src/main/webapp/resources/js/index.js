@@ -26,13 +26,12 @@ var loginFunction = (function ($) {
                 success: function (resp) {
                     if (resp.status === "success") {
                          var str = JSON.parse(resp.data);
-                        window.location.href = str + '.html';
+                        window.location.href = str;
                         toastr["success"](resp.message, "成功提示");
                     } else {
                         toastr["error"](resp.message, "错误提示");
                     }
                 },
-                // error: errCallback
                 error: errCallback
             });
         }

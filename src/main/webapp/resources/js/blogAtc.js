@@ -4,6 +4,21 @@
 var atcFunction = (function ($) {
 
     $(function () {
+        var id = window.location.hash;
+        var reqData = {
+            data: {
+                userId: id.substring(9)
+            }
+        }
+        $.ajax({
+            url: "/atc/getAtcs",
+            contentType: "application/json",
+            type: "POST",
+            data: JSON.stringify(reqData),
+            success: getSuccess,
+            error: errCallback
+        })
+
     })
 
     /*ajax请求通用错误返回*/
@@ -25,17 +40,15 @@ var atcFunction = (function ($) {
                     '<button type="button" class="btn btn-danger" id="delAtc-' + tables[arr].atcId + '" onclick="">删除文章</button></th></tr>';
             }
         }
-        // $(id).empty();
-        // $(id).append(str);
+         $(id).empty();
+         $(id).append(str);
     }
 
     function getSuccess(resp) {
         if (resp.status === "success") {
-            console.log(resp.data);
-            window.location.href = 'showAtc.html';
             atcListTable = JSON.parse(resp.data);
             if (atcListTable != null && atcListTable.length > 0) {
-                setCollectionTable(atcListTable, '#atcListTable')
+                setCollectionTable(atcListTable, '#atcListTable');
             } else {
                 toastr["success"](resp.message + "无相关的记录存在", "成功提示");
             }
@@ -46,8 +59,8 @@ var atcFunction = (function ($) {
     }
 
     return {
-        getAtcs: function () {
-            var userId = (event.target.id).substring(8, (event.target.id).length);
+        /*getAtcs: function () {
+            var userId = window.location.hash;
             var reqData = {
                 data: {
                     userId: Number(userId)
@@ -61,7 +74,7 @@ var atcFunction = (function ($) {
                 success: getSuccess,
                 error: errCallback
             })
-        }
+        }*/
     }
 
 })($);

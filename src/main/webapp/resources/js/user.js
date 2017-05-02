@@ -21,6 +21,7 @@ var userFunction = (function ($) {
         toastr["error"]("请求失败", "网络异常");
     }
 
+
     /*用户数据填充表格*/
     function setCollectionTable(tables, id) {
         var str = "";
@@ -33,13 +34,17 @@ var userFunction = (function ($) {
                     '<th>' + tables[arr].password + '</th>' +
                     '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].userId + '" onclick="userFunction.viewUser(event)">查看详情</button>' +
                     '<button type="button" class="btn btn-primary" id="update-' + tables[arr].userId + '" onclick="userFunction.updateUser(event)">修改用户</button>' +
-                    '<button type="button" class="btn btn-primary" id="article-' + tables[arr].userId + '" onclick="atcFunction.getAtcs(event)">用户文章</button>' +
+                    '<button type="button" class="btn btn-info" id="article-' + tables[arr].userId + '"><a href="./showAtc.html#article-' + tables[arr].userId + '">用户文章</a></button>' +
                     '<button type="button" class="btn btn-danger" id="delUser-' + tables[arr].userId + '" onclick="userFunction.deleteUser(event)">删除用户</button></th></tr>';
             }
         }
         $(id).empty();
         $(id).append(str);
     }
+
+
+
+
 
     /*初始化页面时的数据展示*/
     function getSuccess(resp) {

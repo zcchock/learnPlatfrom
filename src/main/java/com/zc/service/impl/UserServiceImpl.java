@@ -79,9 +79,9 @@ public class UserServiceImpl implements UserService {
             User user = userMapper.queryUserByName(inputUser);
             System.out.println(user);
             if (inputPassword.equals(user.getPassword())) {
-                response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser", "登陆成功");
+                response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser.html", "登陆成功");
             } else {
-                response = commonImpl.responseDeal(response, Global.ERROR, "/index", "密码错误");
+                response = commonImpl.responseDeal(response, Global.ERROR, "/index.html", "密码错误");
             }
         } catch (Exception e) {
             e.printStackTrace();
