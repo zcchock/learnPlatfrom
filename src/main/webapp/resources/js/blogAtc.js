@@ -37,7 +37,7 @@ var atcFunction = (function ($) {
                     '<th>' + tables[arr].atcUrl + '</th>' +
                     '<th>' + tables[arr].atcView + '</th>' +
                     '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].atcId + '" onclick="">查看文章</button>' +
-                    '<button type="button" class="btn btn-danger" id="delAtc-' + tables[arr].atcId + '" onclick="">删除文章</button></th></tr>';
+                    '<button type="button" class="btn btn-danger" id="delAtc-' + tables[arr].atcId + '" onclick="atcFunction.deleteAtc(event)">删除文章</button></th></tr>';
             }
         }
          $(id).empty();
@@ -50,7 +50,7 @@ var atcFunction = (function ($) {
             if (atcListTable != null && atcListTable.length > 0) {
                 setCollectionTable(atcListTable, '#atcListTable');
             } else {
-                toastr["success"](resp.message + "无相关的记录存在", "成功提示");
+                toastr["success"](resp.message + "但无相关数据", "成功提示");
             }
             toastr["success"](resp.message, "成功提示");
         } else {
@@ -59,22 +59,37 @@ var atcFunction = (function ($) {
     }
 
     return {
-        /*getAtcs: function () {
-            var userId = window.location.hash;
+        /*删除文章*/
+        deleteAtc: function (event) {
+            var atcId = (event.target.id).substring(7, (event.target.id).length);
             var reqData = {
                 data: {
-                    userId: Number(userId)
+                    atcId: Number(atcId)
                 }
             };
-            $.ajax({
-                url: "/atc/getAtcs",
-                contentType: "application/json",
-                type: "POST",
-                data: JSON.stringify(reqData),
-                success: getSuccess,
-                error: errCallback
+            bootbox.confirm({
+                title: "请确认",
+                message: "确定要删除该文章吗？",
+                callback: function () {
+                    $.ajax({
+                        url: "/atc/delete",
+                        contentType: "application/json",
+                        type: "POST",
+                        data: JSON.stringify(reqData),
+                        success: function (resp) {
+                            if (resp.status === 'success') {
+                                toastr["success"](resp.message, "成功提示");
+                                location.reload(false);
+                            } else {
+                                toastr["error"](resp.message, "错误提示");
+                            }
+                        },
+                        error: errCallback
+                    });
+                }
             })
-        }*/
+        }
+
     }
 
 })($);

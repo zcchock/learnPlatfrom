@@ -4,8 +4,7 @@
 var userFunction = (function ($) {
 
     $(function () {
-        var reqdata = {
-        }
+        var reqdata = {}
         $.ajax({
             url: "/user/list",
             contentType: "application/json",
@@ -43,9 +42,6 @@ var userFunction = (function ($) {
     }
 
 
-
-
-
     /*初始化页面时的数据展示*/
     function getSuccess(resp) {
         if (resp.status === "success") {
@@ -63,7 +59,7 @@ var userFunction = (function ($) {
 
     //Functions
     return {
-        
+
         /*新增用户*/
         addUser: function () {
             var formHtml = $("#user-add-form").html();
@@ -208,6 +204,7 @@ var userFunction = (function ($) {
                 $("#update-email").val(user.email);
                 $("#update-phone").val(user.phone);
             }
+
             var userId = (event.target.id).substring(7, (event.target.id).length);
             var reqData = {
                 data: {

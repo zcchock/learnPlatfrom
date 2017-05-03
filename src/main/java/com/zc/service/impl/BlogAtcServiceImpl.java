@@ -41,7 +41,19 @@ public class BlogAtcServiceImpl implements BlogAtcService {
     }
 
     public DataResponse delAtc(DataRequest dataRequest) {
-        return null;
+        DataResponse response = new DataResponse();
+        Integer atcId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "atcId", Integer.class, implClass);
+        try {
+            int sucFlag = blogAtcMapper.delAtcById(atcId);
+            if (sucFlag == 1) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "删除文章成功");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, sucFlag, "删除文章失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
     public DataResponse updateAtc(DataRequest dataRequest) {

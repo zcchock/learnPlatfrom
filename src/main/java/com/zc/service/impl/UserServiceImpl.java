@@ -78,9 +78,11 @@ public class UserServiceImpl implements UserService {
             //具体方法
             User user = userMapper.queryUserByName(inputUser);
             System.out.println(user);
-            if (inputPassword.equals(user.getPassword())) {
+            if (inputPassword.equals(user.getPassword()) && user.getRoleId().equals("1")) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser.html", "登陆成功");
-            } else {
+            }else if (inputPassword.equals(user.getPassword()) && !user.getRoleId().equals("1")) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, "/showAtc.html#article-" + user.getUserId(), "登陆成功");
+            }else {
                 response = commonImpl.responseDeal(response, Global.ERROR, "/index.html", "密码错误");
             }
         } catch (Exception e) {
