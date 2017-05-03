@@ -49,10 +49,10 @@ var atcFunction = (function ($) {
             atcListTable = JSON.parse(resp.data);
             if (atcListTable != null && atcListTable.length > 0) {
                 setCollectionTable(atcListTable, '#atcListTable');
+                toastr["success"](resp.message, "成功提示");
             } else {
                 toastr["success"](resp.message + "但无相关数据", "成功提示");
             }
-            toastr["success"](resp.message, "成功提示");
         } else {
             toastr["error"](resp.message, "错误提示");
         }
