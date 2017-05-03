@@ -6,6 +6,7 @@ package com.zc.entity;
 public class BlogAtc {
 
     private int atcId;
+    private int userId;
     private String atcTitle;
     private String atcUrl;
     private String atcType;
@@ -25,6 +26,14 @@ public class BlogAtc {
 
     public String getAtcTitle() {
         return atcTitle;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public void setAtcTitle(String atcTitle) {

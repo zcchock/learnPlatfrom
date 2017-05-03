@@ -18,15 +18,11 @@
         atc_id
     </select>
 
-    <select id="queryActsByUid" resultType="com.zc.entity.BlogAtc">
-        SELECT * FROM blog_atc
-        WHERE blog_atc.atc_id IN (
-        SELECT atc_id FROM user_article
+    <select id="queryActsByUid" parameterType="Integer" resultType="com.zc.entity.BlogAtc">
+        SELECT * FROM
+        blog_atc
         WHERE
         user_id = #{userId}
-        AND
-        blog_atc.atc_id = user_article.atc_id
-        )
     </select>
 
     <insert id="insertSelective" parameterType="com.zc.entity.BlogAtc">
@@ -34,6 +30,9 @@
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="atcId != null">
                 atc_id,
+            </if>
+            <if test="userId != null">
+                user_id,
             </if>
             <if test="atcTitle != null">
                 atc_title,
@@ -57,6 +56,9 @@
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="atcId != null">
                 #{atcId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
             </if>
             <if test="atcTitle != null">
                 #{atcTitle,jdbcType=VARCHAR},
