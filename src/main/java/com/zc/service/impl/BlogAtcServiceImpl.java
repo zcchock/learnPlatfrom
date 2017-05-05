@@ -1,9 +1,6 @@
 package com.zc.service.impl;
 
-import com.zc.api.DataRequest;
-import com.zc.api.DataResponse;
-import com.zc.api.DateUtils;
-import com.zc.api.Global;
+import com.zc.api.*;
 import com.zc.entity.BlogAtc;
 import com.zc.mapper.BlogAtcMapper;
 import com.zc.mapper.CommonImpl;
@@ -28,6 +25,8 @@ public class BlogAtcServiceImpl implements BlogAtcService {
 
     private CommonImpl commonImpl = new CommonImpl();
     private DateUtils dateUtils = new DateUtils();
+    private FileMethod fileMethod = new FileMethod();
+    private String urlHead = "E:/School/FinalDesign/actFiles/";
 
     /**
      * 根据ID获取文章信息
@@ -65,9 +64,11 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         DataResponse response = new DataResponse();
         try {
             BlogAtc blogAtc = (BlogAtc) commonImpl.mapJsonToObj(dataRequest, response, "blogAtc", BlogAtc.class, implClass);
+            String url = urlHead + blogAtc.getAtcTitle() + ".txt";
+            fileMethod.TextToFile(url, blogAtc.getAtcUrl());
+            blogAtc.setAtcUrl(url);
             blogAtc.setUserId(1);
             blogAtc.setAtcTime(dateUtils.formatDateTimeN(new Date()));
-            blogAtc.setAtcView(0);
             blogAtc.setAtcFlag("1");
             int sucFlag = blogAtcMapper.insertSelective(blogAtc);
             if (sucFlag == 1) {
