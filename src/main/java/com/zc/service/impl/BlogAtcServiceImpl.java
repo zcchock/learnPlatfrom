@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,18 +29,64 @@ public class BlogAtcServiceImpl implements BlogAtcService {
     private CommonImpl commonImpl = new CommonImpl();
     private DateUtils dateUtils = new DateUtils();
 
+    /**
+     * 根据ID获取文章信息
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse getAtcById(DataRequest dataRequest) {
-        return null;
+        DataResponse response = new DataResponse();
+        Integer atcId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "atcId", Integer.class, implClass);
+        try {
+            BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
+            if (blogAtc != null) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, blogAtc, "成功读取文章");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, blogAtc, "读取文章失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
     public DataResponse getAllAtcs(DataRequest dataRequest) {
         return null;
     }
 
+    /**
+     * 添加文章
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse addAtc(DataRequest dataRequest) {
-        return null;
+        DataResponse response = new DataResponse();
+        try {
+            BlogAtc blogAtc = (BlogAtc) commonImpl.mapJsonToObj(dataRequest, response, "blogAtc", BlogAtc.class, implClass);
+            blogAtc.setUserId(1);
+            blogAtc.setAtcTime(dateUtils.formatDateTimeN(new Date()));
+            blogAtc.setAtcView(0);
+            blogAtc.setAtcFlag("1");
+            int sucFlag = blogAtcMapper.insertSelective(blogAtc);
+            if (sucFlag == 1) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, blogAtc, "成功添加文章");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, blogAtc, "添加文章失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
+    /**
+     * 删除文章
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse delAtc(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         Integer atcId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "atcId", Integer.class, implClass);
@@ -60,6 +107,12 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         return null;
     }
 
+    /**
+     * 根据用户ID获取其文章
+     *
+     * @param dataRequest
+     * @return
+     */
     public DataResponse getActsByUid(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
         Integer userId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "userId", Integer.class, implClass);
@@ -75,4 +128,5 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         }
         return response;
     }
+
 }

@@ -36,7 +36,7 @@ var atcFunction = (function ($) {
                     '<th>' + tables[arr].atcTitle + '</th>' +
                     '<th>' + tables[arr].atcUrl + '</th>' +
                     '<th>' + tables[arr].atcView + '</th>' +
-                    '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].atcId + '" onclick="">查看文章</button>' +
+                    '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].atcId + '"><a href="./detailAtc.html#detail-' + tables[arr].atcId + '">>查看文章</button>' +
                     '<button type="button" class="btn btn-danger" id="delAtc-' + tables[arr].atcId + '" onclick="atcFunction.deleteAtc(event)">删除文章</button></th></tr>';
             }
         }
@@ -59,6 +59,16 @@ var atcFunction = (function ($) {
     }
 
     return {
+        /*文章详情*/
+        detailAtc: function (event) {
+            var atcId = (event.target.id).substring(7, (event.target.id).length);
+            var reqData = {
+                data: {
+                    atcId: Number(atcId)
+                }
+            };
+            
+        },
         /*删除文章*/
         deleteAtc: function (event) {
             var atcId = (event.target.id).substring(7, (event.target.id).length);

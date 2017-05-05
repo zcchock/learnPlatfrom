@@ -53,7 +53,7 @@ public class BlogAtcController {
     }
 
     @RequestMapping(value = "/addAtc", method = RequestMethod.POST)
-    public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
+    public DataResponse addAtc(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
         DataResponse dataResponse = blogAtcService.addAtc(dataRequest);
