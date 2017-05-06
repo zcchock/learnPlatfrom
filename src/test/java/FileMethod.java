@@ -1,6 +1,4 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by chock on 2017/5/5.
@@ -22,6 +20,21 @@ public class FileMethod {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String ReadTxtFile(String FileName) throws Exception {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(FileName));
+        ByteArrayOutputStream memStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len = 0;
+        while ((len = bufferedInputStream.read(buffer)) != -1){
+            memStream.write(buffer, 0, len);
+        }
+        byte[] data = memStream.toByteArray();
+        bufferedInputStream.close();
+        memStream.close();
+        bufferedInputStream.close();
+        return new String(data);
     }
 
 

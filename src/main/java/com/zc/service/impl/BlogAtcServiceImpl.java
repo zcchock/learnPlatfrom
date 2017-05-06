@@ -40,6 +40,7 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         try {
             BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
             if (blogAtc != null) {
+                blogAtc.setAtcUrl(fileMethod.ReadTxtFile(blogAtc.getAtcUrl()));
                 response = commonImpl.responseDeal(response, Global.SUCCESS, blogAtc, "成功读取文章");
             } else {
                 response = commonImpl.responseDeal(response, Global.ERROR, blogAtc, "读取文章失败");

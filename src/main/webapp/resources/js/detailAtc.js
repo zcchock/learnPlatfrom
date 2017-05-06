@@ -25,10 +25,7 @@ var atcDetailFunction = (function ($) {
         var str1 = "";
         var str2 = "";
         str1 += '<h3>' + obj.atcTitle + '</h3>';
-        str2 += '<input type="text" value="  '+   obj.atcUrl  +  '></input> ';
-
-        $(body1).empty();
-        $(body2).empty();
+        str2 += obj.atcUrl;
         $(body1).append(str1);
         $(body2).append(str2);
     }
@@ -37,7 +34,7 @@ var atcDetailFunction = (function ($) {
         if (resp.status === "success") {
             atcObj = JSON.parse(resp.data);
             if (atcObj != null) {
-                setContent(atcObj, '#titleBody', '#contentBody');
+                setContent(atcObj, '#title', '#content');
                 toastr["success"](resp.message, "成功提示");
             } else {
                 toastr["success"](resp.message + "但无相关数据", "成功提示");
