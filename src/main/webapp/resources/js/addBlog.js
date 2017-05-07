@@ -10,6 +10,7 @@ function errCallback(resp) {
 }
 
 var addBlogFunction = (function ($) {
+    
     return {
         addAtc: function () {
             var title = $('#title').val();

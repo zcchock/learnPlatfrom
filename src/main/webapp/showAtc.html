@@ -10,9 +10,13 @@
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="/resources/js/blogAtc.js"></script>
-
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- simditor -->
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/module.js"></script>
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/hotkeys.js"></script>
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/uploader.js"></script>
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/simditor.js"></script>
     <!-- toastr -->
     <script src="/resources/js/toastr/2.1.2/toastr.min.js"></script>
     <!-- toastr -->
@@ -21,12 +25,18 @@
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/js/toastr/2.1.2/toastr.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/css/simditor/2.3.6/simditor.css"/>
 </head>
 <body>
 
 <div class="container">
 
     <h3>用户文章</h3>
+
+    <div class="alert alert-warning" role="alert">
+        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>新增文章
+        <button type="button" class="btn btn-primary btn-sm" id="add-btn" onclick="atcFunction.addAtc(event)">添加</button>
+    </div>
 
     <div class="box-body">
         <table class="table table-bordered table-striped datatables-table">
@@ -42,8 +52,26 @@
             <tbody id="atcListTable"/>
         </table>
     </div>
-
 </div>
+
+
+<script id="atc-add-form" type="text/html">
+    <div class="form-group">
+        <input id="title" type="text" class="form-control" placeholder="请输入你的标题"/>
+    </div>
+    <div class="form-group">
+        <label for="typeSelect">选择类型</label>
+        <select class="form-control" id="typeSelect">
+            <option selected="selected">java</option>
+            <option>C++</option>
+            <option>C#</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea id="editor" placeholder="请输入你的内容" autofocus></textarea>
+    </div>
+</script>
+
 
 </body>
 </html>

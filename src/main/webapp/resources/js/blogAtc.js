@@ -58,6 +58,8 @@ var atcFunction = (function ($) {
         }
     }
 
+
+
     return {
         /*文章详情*/
         detailAtc: function (event) {
@@ -98,6 +100,58 @@ var atcFunction = (function ($) {
                     });
                 }
             })
+        },
+
+        addAtc:function (event) {
+
+            var formHtml = $("#atc-add-form").html();
+            bootbox.dialog({
+                message: formHtml,
+                title: "新增文章",
+                buttons: {
+                    cancel: {
+                        label: "取消",
+                        className: "btn-default"
+                    },
+                    save: {
+                        label: "保存",
+                        className: "btn-primary",
+                        callback: function () {
+                            var title = $('#title').val();
+                            var typeSelect = $('#typeSelect').val();
+                            var editor = $('#editor').val();
+                            var reqData = {
+                                data: {
+                                    blogAtc: {
+                                        atcTitle: title,
+                                        atcType: typeSelect,
+                                        atcUrl: editor
+                                    }
+                                }
+                            }
+                            toastr["info"]("正在保存，请稍候。", "提示");
+                            $.ajax({
+                                url: "/atc/addAtc",
+                                contentType: "application/json",
+                                method: "POST",
+                                data: JSON.stringify(reqData),
+                                success: function (resp) {
+                                    if (resp.status === "success") {
+                                        toastr["success"](resp.message, "成功提示");
+                                        window.location.reload();
+                                    } else {
+                                        toastr["error"](resp.message, "错误提示");
+                                    }
+                                },
+                                error: errCallback
+                            });
+                        }
+                    }
+                }
+            });
+            var editor = new Simditor({
+                textarea: $('#editor')
+            });
         }
 
     }
