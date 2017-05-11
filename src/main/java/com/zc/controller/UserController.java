@@ -1,8 +1,8 @@
 package com.zc.controller;
 
-import com.zc.api.DataRequest;
-import com.zc.api.DataResponse;
-import com.zc.service.UserService;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
+import com.zc.api.DataRequest;
+import com.zc.api.DataResponse;
+import com.zc.service.UserService;
 
 /**
  * Created by chock on 2017/4/3.
@@ -65,13 +67,30 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
         DataResponse dataResponse = userService.login(dataRequest);
         return dataResponse;
-    }
+    }*/
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(HttpServletRequest request)throws Exception{
+    	String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
+		 if (exceptionClassName != null) {
+			 LOGGER.info("身份认证失败，账号密码不正确");
+		}
+		return "index";
+	}
+    
+    @RequiresRoles("admin")
+    @RequestMapping(value = "/admin", method = RequestMethod.POST)
+   	public DataResponse admin(HttpServletRequest request)throws Exception{
+   		LOGGER.info("damin");
+   		DataResponse dataReaponse = new DataResponse();
+   		dataReaponse.setCode("200");
+   		return dataReaponse;
+   	}
 
     /**
      * 插入新用户
