@@ -30,6 +30,7 @@
 		<property name="filterChainDefinitions">
 			<value>
 				/resources/** = anon
+				/index.html = anon
 				/user/register = anon
 				/user/login= authc,sysUser
 				/user/logout = logout

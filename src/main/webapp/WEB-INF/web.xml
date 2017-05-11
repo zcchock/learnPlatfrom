@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  	
-  	<context-param>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:shiro/shiro.xml;
@@ -14,7 +21,7 @@
 		<description>spring监听器</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
+
 	<filter>
 		<description>字符集过滤器</description>
 		<filter-name>encodingFilter</filter-name>
@@ -29,7 +36,7 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<filter>
 		<filter-name>shiroFilter</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -46,13 +53,11 @@
 		<filter-name>shiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<!-- 如果是用mvn命令生成的xml，需要修改servlet版本为3.1 -->
 	<!-- 配置DispatcherServlet -->
-	<!-- 配置springMVC需要加载的配置文件
-      spring-dao.xml,spring-service.xml,spring-web.xml
-      Mybatis - > spring -> springmvc
-   -->
+	<!-- 配置springMVC需要加载的配置文件 spring-dao.xml,spring-service.xml,spring-web.xml 
+		Mybatis - > spring -> springmvc -->
 	<servlet>
 		<servlet-name>chock-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -70,8 +75,8 @@
 		<servlet-name>chock-dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	
-	
+
+
+
 </web-app>
 
