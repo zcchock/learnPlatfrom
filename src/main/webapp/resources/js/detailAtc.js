@@ -21,20 +21,23 @@ var atcDetailFunction = (function ($) {
     })
 
     /*数据填充表格*/
-    function setContent(obj, body1, body2) {
+    function setContent(obj, body1, body2, body3) {
         var str1 = "";
         var str2 = "";
+        var str3 = "";
         str1 += '<h3>' + obj.atcTitle + '</h3>';
         str2 += obj.atcUrl;
+        str3 += obj.atcBackup;
         $(body1).append(str1);
         $(body2).append(str2);
+        $(body3).append(str3);
     }
 
     function getSuccess(resp) {
         if (resp.status === "success") {
             atcObj = JSON.parse(resp.data);
             if (atcObj != null) {
-                setContent(atcObj, '#title', '#content');
+                setContent(atcObj, '#title', '#content', '#author');
                 toastr["success"](resp.message, "成功提示");
             } else {
                 toastr["success"](resp.message + "但无相关数据", "成功提示");
