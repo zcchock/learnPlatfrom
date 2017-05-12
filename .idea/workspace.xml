@@ -8,11 +8,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zc/service/impl/FriendServiceImpl.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FriendMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/entity/BlogAtc.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/entity/BlogAtc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/mapper/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/mapper/UserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/service/impl/BlogAtcServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/service/impl/BlogAtcServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/shiro/realm/CustomRealm.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/shiro/realm/CustomRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/BlogAtcMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BlogAtcMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/detailAtc.html" afterPath="$PROJECT_DIR$/src/main/webapp/detailAtc.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/detailAtc.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/detailAtc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showUser.html" afterPath="$PROJECT_DIR$/src/main/webapp/showUser.html" />
@@ -1315,7 +1310,7 @@
       <workItem from="1494553221852" duration="6787000" />
       <workItem from="1494560308463" duration="24000" />
       <workItem from="1494562481056" duration="61000" />
-      <workItem from="1494572984461" duration="4772000" />
+      <workItem from="1494572984461" duration="4906000" />
     </task>
     <task id="LOCAL-00001" summary="成功运行（登录功能未完成）">
       <created>1491381665917</created>
@@ -1527,7 +1522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494575282539</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="添加文章表的备用字段，存放作者名">
+      <created>1494577945017</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1494577945017</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1563,7 +1565,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193629000" />
+    <option name="totallyTimeSpent" value="193763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="753" extended-state="6" />
@@ -1621,7 +1623,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="解决登录问题（sumbit按钮的浏览器提交和ajax中的异步跳转冲突）&#10;js中的相对路径问题未解决&#10;" />
     <MESSAGE value="页面路径修改" />
     <MESSAGE value="添加bootbox的js" />
     <MESSAGE value="添加用户添加和查询用户列表的实现（待优化）" />
@@ -1646,7 +1647,8 @@
     <MESSAGE value="添加写进文件方法类，实现新增文章后内容存到本地文件中" />
     <MESSAGE value="添加读取文件方法（查看文章详情时ajax填充页面失败）" />
     <MESSAGE value="解决了删除文章按钮失效问题（原因：上一控件的标签没有关闭）" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决了删除文章按钮失效问题（原因：上一控件的标签没有关闭）" />
+    <MESSAGE value="添加文章表的备用字段，存放作者名" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加文章表的备用字段，存放作者名" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1998,14 +2000,14 @@
         <state relative-caret-position="133">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding>
-            <element signature="e#167#168#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#167#168#0" expanded="false" />
+            <element signature="e#196#197#0" expanded="false" />
+            <element signature="e#237#238#0" expanded="false" />
+            <element signature="e#273#274#0" expanded="false" />
+            <element signature="e#302#303#0" expanded="false" />
+            <element signature="e#330#331#0" expanded="false" />
+            <element signature="e#369#370#0" expanded="false" />
+            <element signature="e#403#404#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zc.mapper.FriendMapper">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="queryByUser" resultType="UserFriend" parameterType="Integer">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        user_friend
+        WHERE
+        user_id = #{userId}
+    </select>
+
+    <select id="queryByFri" resultType="UserFriend" parameterType="Integer">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        user_friend
+        WHERE
+        fri_id = #{friId}
+    </select>
+
+    <select id="queryAll" resultType="UserFriend">
+        SELECT
+        *
+        FROM
+        user
+        ORDER BY
+        user_friend
+    </select>
+
+    <select id="countFri" resultType="Integer">
+        SELECT
+        count(*)
+        FROM
+        user_friend
+    </select>
+
+    <insert id="insertSelective" parameterType="com.zc.entity.UserFriend">
+        insert into user_friend
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="friId != null">
+                fri_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="friId != null">
+                #{friId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delFriById" parameterType="Integer">
+        DELETE
+        FROM
+        user
+        WHERE
+        user_id = #{userId}
+    </delete>
+
+</mapper>
