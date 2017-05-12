@@ -61,16 +61,6 @@ var atcFunction = (function ($) {
 
 
     return {
-        /*文章详情*/
-        /*detailAtc: function (event) {
-            var atcId = (event.target.id).substring(7, (event.target.id).length);
-            var reqData = {
-                data: {
-                    atcId: Number(atcId)
-                }
-            };
-            
-        },*/
         /*删除文章*/
         deleteAtc: function (event) {
             var atcId = (event.target.id).substring(7, (event.target.id).length);

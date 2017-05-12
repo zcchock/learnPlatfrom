@@ -52,6 +52,9 @@
             <if test="atcFlag != null">
                 atc_flag,
             </if>
+            <if test="atcBackup != null">
+                atc_backup,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="atcId != null">
@@ -77,6 +80,9 @@
             </if>
             <if test="atcFlag != null">
                 #{atcFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="atcBackup != null">
+                #{atcBackup,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
