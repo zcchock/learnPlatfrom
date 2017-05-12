@@ -36,7 +36,7 @@ var atcFunction = (function ($) {
                     '<th>' + tables[arr].atcTitle + '</th>' +
                     '<th>' + tables[arr].atcUrl + '</th>' +
                     '<th>' + tables[arr].atcView + '</th>' +
-                    '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].atcId + '"><a href="./detailAtc.html#detail-' + tables[arr].atcId + '">>查看文章</button>' +
+                    '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].atcId + '"><a href="./detailAtc.html#detail-' + tables[arr].atcId + '">查看文章</a></button>' +
                     '<button type="button" class="btn btn-danger" id="delAtc-' + tables[arr].atcId + '" onclick="atcFunction.deleteAtc(event)">删除文章</button></th></tr>';
             }
         }
