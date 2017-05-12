@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.zc.api.DataResponse;
 import com.zc.entity.User;
+import com.zc.mapper.RoleMapper;
 import com.zc.mapper.UserMapper;
 import com.zc.service.UserService;
 import com.zc.service.impl.UserServiceImpl;
@@ -29,6 +30,8 @@ public class CustomRealm extends AuthorizingRealm {
 
 	@Autowired
 	private UserMapper userMapper;
+	@Autowired
+	private RoleMapper roleMapper;
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -38,9 +41,13 @@ public class CustomRealm extends AuthorizingRealm {
 		logger.info("角色授权:"+account);
 		//查询账号角色
 		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+
 		Set<String> roleSet = new HashSet<String>();
-		roleSet.add("admin");
-		roleSet.add("normal");
+
+		User user = userMapper.queryUserByName(account);
+		String roleContent = roleMapper.queryNameById(user.getRoleId());
+		roleSet.add(roleContent);
+
 		authorizationInfo.setRoles(roleSet);
 		return authorizationInfo;
 	}
@@ -52,12 +59,13 @@ public class CustomRealm extends AuthorizingRealm {
 		//查询账户
 		UserCertificate userCertificate = new UserCertificate();
 
-//		User user = userMapper.queryUserByName(account);
-//		userCertificate.setAccount(account);
-//		userCertificate.setPassword(user.getPassword());
+		User user = userMapper.queryUserByName(account);
 
-		userCertificate.setAccount("admin");
-		userCertificate.setPassword("123456");
+		userCertificate.setAccount(account);
+		userCertificate.setPassword(user.getPassword());
+
+//		userCertificate.setAccount("admin");
+//		userCertificate.setPassword("123456");
 		
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
 				userCertificate.getAccount(), 
