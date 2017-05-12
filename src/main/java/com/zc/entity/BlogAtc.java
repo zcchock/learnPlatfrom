@@ -13,6 +13,9 @@ public class BlogAtc {
     private String atcTime;
     private Integer atcView;
     private String atcFlag;
+    private String atcBackup;
+
+
 
     private User user;
 
@@ -80,6 +83,14 @@ public class BlogAtc {
         this.atcFlag = atcFlag;
     }
 
+    public String getAtcBackup() {
+        return atcBackup;
+    }
+
+    public void setAtcBackup(String atcBackup) {
+        this.atcBackup = atcBackup;
+    }
+
     public User getUser() {
         return user;
     }
@@ -90,15 +101,17 @@ public class BlogAtc {
 
     @Override
     public String toString() {
-        return "BlogAtc[" +
+        return "BlogAtc{" +
                 "atcId=" + atcId +
+                ", userId=" + userId +
                 ", atcTitle='" + atcTitle + '\'' +
                 ", atcUrl='" + atcUrl + '\'' +
                 ", atcType='" + atcType + '\'' +
                 ", atcTime='" + atcTime + '\'' +
                 ", atcView=" + atcView +
                 ", atcFlag='" + atcFlag + '\'' +
+                ", atcBackup='" + atcBackup + '\'' +
                 ", user=" + user +
-                ']';
+                '}';
     }
 }

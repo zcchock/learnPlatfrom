@@ -18,10 +18,10 @@ import org.slf4j.LoggerFactory;
 
 import com.zc.shiro.model.UserCertificate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class CustomRealm extends AuthorizingRealm {
 
 	@Autowired
@@ -49,10 +49,10 @@ public class CustomRealm extends AuthorizingRealm {
 		//查询账户
 		UserCertificate userCertificate = new UserCertificate();
 
-		User user = userMapper.queryUserByName(account);
+//		User user = userMapper.queryUserByName(account);
 
-		userCertificate.setAccount(account);
-		userCertificate.setPassword(user.getPassword());
+		userCertificate.setAccount("admin");
+		userCertificate.setPassword("123456");
 		
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
 				userCertificate.getAccount(), 

@@ -34,7 +34,7 @@
 
     <!-- 4.扫描web相关的bean -->
     <context:component-scan base-package="com.zc.controller" />
-    <context:component-scan base-package="com.zc.shiro.realm" />
+    <!--<context:component-scan base-package="com.zc.shiro.realm" />-->
 
     <!-- 开启aop，对类代理 -->
 	<aop:config proxy-target-class="true"></aop:config>

@@ -1,6 +1,5 @@
 package com.zc.mapper;
 
-import com.zc.entity.BlogAtc;
 import com.zc.entity.User;
 
 import java.util.List;

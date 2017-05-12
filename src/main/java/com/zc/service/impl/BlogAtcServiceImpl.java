@@ -45,8 +45,10 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         Integer atcId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "atcId", Integer.class, implClass);
         try {
             BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
+            User author = userMapper.queryUser(blogAtc.getUserId()) ;
             if (blogAtc != null) {
                 blogAtc.setAtcUrl(fileMethod.ReadTxtFile(blogAtc.getAtcUrl()));
+                blogAtc.setAtcBackup(author.getAccount());
                 response = commonImpl.responseDeal(response, Global.SUCCESS, blogAtc, "成功读取文章");
             } else {
                 response = commonImpl.responseDeal(response, Global.ERROR, blogAtc, "读取文章失败");
