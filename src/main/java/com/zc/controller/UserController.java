@@ -72,7 +72,6 @@ public class UserController {
     }*/
     @RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(HttpServletRequest request)throws Exception{
-//        System.out.println("1345646");
         String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
 		 if (exceptionClassName != null) {
 			 LOGGER.info("身份认证失败，账号密码不正确");
