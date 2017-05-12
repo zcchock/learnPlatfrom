@@ -11,6 +11,10 @@ public interface BlogAtcMapper {
 
     BlogAtc queryAtc(int atcId);
 
+    List<BlogAtc> queryAtcsByType(String atcType);
+
+    List<BlogAtc> queryAtcsByTitle(String atcTitle);
+
     List<BlogAtc> queryAll();
 
     int insertSelective(BlogAtc blogAtc);

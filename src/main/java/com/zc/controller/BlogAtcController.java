@@ -52,7 +52,15 @@ public class BlogAtcController {
     public DataResponse getAtcsByUid(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
-        DataResponse dataResponse = blogAtcService.getActsByUid(dataRequest);
+        Object value = dataRequest.getData();
+        DataResponse dataResponse = new DataResponse();
+        if (value.toString().length() == 1) {
+            dataResponse = blogAtcService.getActsByUid(dataRequest);
+        } else if ("all".equals(value.toString())) {
+            dataResponse = blogAtcService.getAllAtcs(dataRequest);
+        } else {
+            dataResponse = blogAtcService.getActsByType(dataRequest);
+        }
         return dataResponse;
     }
 

@@ -23,6 +23,26 @@
         blog_atc
         WHERE
         user_id = #{userId}
+        ORDER BY
+        atc_id
+    </select>
+
+    <select id="queryAtcsByType" parameterType="String" resultType="com.zc.entity.BlogAtc">
+        SELECT * FROM
+        blog_atc
+        WHERE
+        atc_type = #{atcType}
+        ORDER BY
+        atc_id
+    </select>
+
+    <select id="queryAtcsByTitle" parameterType="String" resultType="com.zc.entity.BlogAtc">
+        SELECT * FROM
+        blog_atc
+        WHERE
+        atc_title = #{atcTitle}
+        ORDER BY
+        atc_id
     </select>
 
     <insert id="insertSelective" parameterType="com.zc.entity.BlogAtc">
@@ -100,10 +120,10 @@
                 atc_title = #{atcTitle,jdbcType=VARCHAR},
             </if>
             <if test="atcUrl != null">
-                atc_url =  #{atcUrl,jdbcType=VARCHAR},
+                atc_url = #{atcUrl,jdbcType=VARCHAR},
             </if>
             <if test="atcType != null">
-                 atc_type = #{atcType,jdbcType=VARCHAR},
+                atc_type = #{atcType,jdbcType=VARCHAR},
             </if>
             <if test="atcTime != null">
                 atc_time = #{atcTime,jdbcType=VARCHAR},

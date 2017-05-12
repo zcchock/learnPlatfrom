@@ -62,7 +62,18 @@ public class BlogAtcServiceImpl implements BlogAtcService {
     }
 
     public DataResponse getAllAtcs(DataRequest dataRequest) {
-        return null;
+        DataResponse response = new DataResponse();
+        try {
+            List<BlogAtc> atcs = blogAtcMapper.queryAll();
+            if (atcs != null) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, atcs, "成功查询用户博文");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, atcs, "查询用户博文失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
     /**
@@ -143,6 +154,28 @@ public class BlogAtcServiceImpl implements BlogAtcService {
             e.printStackTrace();
         }
         return response;
+    }
+
+    @Override
+    public DataResponse getActsByType(DataRequest dataRequest) {
+        DataResponse response = new DataResponse();
+        String type = (String) commonImpl.mapJsonToObj(dataRequest, response, "userId", String.class, implClass);
+        try {
+            List<BlogAtc> atcs = blogAtcMapper.queryAtcsByType(type);
+            if (atcs != null) {
+                response = commonImpl.responseDeal(response, Global.SUCCESS, atcs, "成功查询用户博文");
+            } else {
+                response = commonImpl.responseDeal(response, Global.ERROR, atcs, "查询用户博文失败");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    @Override
+    public DataResponse getActsByTitle(DataRequest dataRequest) {
+        return null;
     }
 
 }

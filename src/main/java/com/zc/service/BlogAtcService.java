@@ -21,4 +21,8 @@ public interface BlogAtcService {
     DataResponse updateAtc(DataRequest dataRequest);
 
     DataResponse getActsByUid(DataRequest dataRequest);
+
+    DataResponse getActsByType(DataRequest dataRequest);
+
+    DataResponse getActsByTitle(DataRequest dataRequest);
 }
