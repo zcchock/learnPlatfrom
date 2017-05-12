@@ -90,11 +90,32 @@
     <update id="updateById" parameterType="com.zc.entity.BlogAtc">
         update blog_atc
         <set>
-            <if test="name != null">
+            <if test="atcId != null">
+                atc_id = #{atcId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="atcTitle != null">
                 atc_title = #{atcTitle,jdbcType=VARCHAR},
             </if>
-            <if test="password != null">
-                atc_type = #{atcType,jdbcType=VARCHAR},
+            <if test="atcUrl != null">
+                atc_url =  #{atcUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="atcType != null">
+                 atc_type = #{atcType,jdbcType=VARCHAR},
+            </if>
+            <if test="atcTime != null">
+                atc_time = #{atcTime,jdbcType=VARCHAR},
+            </if>
+            <if test="atcView != null">
+                atc_view = #{atcView,jdbcType=INTEGER},
+            </if>
+            <if test="atcFlag != null">
+                atc_flag = #{atcFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="atcBackup != null">
+                atc_backup = #{atcBackup,jdbcType=VARCHAR},
             </if>
         </set>
         where atc_id = #{atcId,jdbcType=INTEGER}

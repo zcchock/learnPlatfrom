@@ -3,8 +3,11 @@ package com.zc.shiro.realm;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.zc.api.DataResponse;
 import com.zc.entity.User;
 import com.zc.mapper.UserMapper;
+import com.zc.service.UserService;
+import com.zc.service.impl.UserServiceImpl;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -18,10 +21,10 @@ import org.slf4j.LoggerFactory;
 
 import com.zc.shiro.model.UserCertificate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-@Repository
 public class CustomRealm extends AuthorizingRealm {
 
 	@Autowired
@@ -50,6 +53,8 @@ public class CustomRealm extends AuthorizingRealm {
 		UserCertificate userCertificate = new UserCertificate();
 
 //		User user = userMapper.queryUserByName(account);
+//		userCertificate.setAccount(account);
+//		userCertificate.setPassword(user.getPassword());
 
 		userCertificate.setAccount("admin");
 		userCertificate.setPassword("123456");

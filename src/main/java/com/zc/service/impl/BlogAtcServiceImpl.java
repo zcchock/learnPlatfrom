@@ -45,6 +45,8 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         Integer atcId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "atcId", Integer.class, implClass);
         try {
             BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
+            blogAtc.setAtcView(blogAtc.getAtcView() + 1);
+            blogAtcMapper.updateById(blogAtc); //更新浏览次数
             User author = userMapper.queryUser(blogAtc.getUserId()) ;
             if (blogAtc != null) {
                 blogAtc.setAtcUrl(fileMethod.ReadTxtFile(blogAtc.getAtcUrl()));
