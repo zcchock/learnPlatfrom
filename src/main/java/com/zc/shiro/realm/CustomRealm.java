@@ -3,6 +3,8 @@ package com.zc.shiro.realm;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.zc.entity.User;
+import com.zc.mapper.UserMapper;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -15,9 +17,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.zc.shiro.model.UserCertificate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 public class CustomRealm extends AuthorizingRealm {
+
+	@Autowired
+	private UserMapper userMapper;
 
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -29,6 +37,7 @@ public class CustomRealm extends AuthorizingRealm {
 		SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 		Set<String> roleSet = new HashSet<String>();
 		roleSet.add("admin");
+		roleSet.add("normal");
 		authorizationInfo.setRoles(roleSet);
 		return authorizationInfo;
 	}
@@ -39,8 +48,11 @@ public class CustomRealm extends AuthorizingRealm {
 		logger.info("身份认证:"+account);
 		//查询账户
 		UserCertificate userCertificate = new UserCertificate();
-		userCertificate.setAccount("admin");
-		userCertificate.setPassword("admin");
+
+		User user = userMapper.queryUserByName(account);
+
+		userCertificate.setAccount(account);
+		userCertificate.setPassword(user.getPassword());
 		
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
 				userCertificate.getAccount(), 

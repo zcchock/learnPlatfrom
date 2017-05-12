@@ -2,13 +2,17 @@ package com.zc.service.impl;
 
 import com.zc.api.*;
 import com.zc.entity.BlogAtc;
+import com.zc.entity.User;
 import com.zc.mapper.BlogAtcMapper;
 import com.zc.mapper.CommonImpl;
+import com.zc.mapper.UserMapper;
 import com.zc.service.BlogAtcService;
+import com.zc.shiro.model.UserCertificate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +26,8 @@ public class BlogAtcServiceImpl implements BlogAtcService {
     private Class implClass = BlogAtcServiceImpl.class;     //Logger日志的Class
     @Autowired
     private BlogAtcMapper blogAtcMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     private CommonImpl commonImpl = new CommonImpl();
     private DateUtils dateUtils = new DateUtils();
@@ -61,14 +67,18 @@ public class BlogAtcServiceImpl implements BlogAtcService {
      * @param dataRequest
      * @return
      */
-    public DataResponse addAtc(DataRequest dataRequest) {
+    public DataResponse addAtc(DataRequest dataRequest,HttpServletRequest request) {
         DataResponse response = new DataResponse();
+        String account = (String) request.getAttribute("userAcc");
         try {
             BlogAtc blogAtc = (BlogAtc) commonImpl.mapJsonToObj(dataRequest, response, "blogAtc", BlogAtc.class, implClass);
             String url = urlHead + blogAtc.getAtcTitle() + ".txt";
             fileMethod.TextToFile(url, blogAtc.getAtcUrl());
             blogAtc.setAtcUrl(url);
-            blogAtc.setUserId(1);
+
+            User user = userMapper.queryUserByName(account);
+
+            blogAtc.setUserId(user.getUserId());
             blogAtc.setAtcTime(dateUtils.formatDateTimeN(new Date()));
             blogAtc.setAtcFlag("1");
             int sucFlag = blogAtcMapper.insertSelective(blogAtc);

@@ -39,6 +39,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
+    @RequiresRoles("admin")
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public DataResponse userList(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -53,6 +54,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
+    @RequiresRoles("admin")
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     public DataResponse getUserById(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -61,12 +63,6 @@ public class UserController {
         return dataResponse;
     }
 
-    /**
-     * 登录时的检验功能
-     *
-     * @param dataRequest
-     * @return
-     */
     /*@RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -76,11 +72,12 @@ public class UserController {
     }*/
     @RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(HttpServletRequest request)throws Exception{
-    	String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
+//        System.out.println("1345646");
+        String exceptionClassName = (String) request.getAttribute("shiroLoginFailure");
 		 if (exceptionClassName != null) {
 			 LOGGER.info("身份认证失败，账号密码不正确");
 		}
-		return "index";
+		return "/index.html";
 	}
     
     @RequiresRoles("admin")
@@ -98,6 +95,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
+    @RequiresRoles("admin")
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -112,6 +110,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
+    @RequiresRoles("admin")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public DataResponse delUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -126,6 +125,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
+    @RequiresRoles("admin")
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public DataResponse updateUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

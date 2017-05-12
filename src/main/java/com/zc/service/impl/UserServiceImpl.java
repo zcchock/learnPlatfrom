@@ -72,15 +72,15 @@ public class UserServiceImpl implements UserService {
      */
     public DataResponse login(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
-        String inputUser = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputUser", String.class, implClass);
-        String inputPassword = (String) commonImpl.mapJsonToObj(dataRequest, response, "inputPassword", String.class, implClass);
+        String username = (String) commonImpl.mapJsonToObj(dataRequest, response, "username", String.class, implClass);
+        String password = (String) commonImpl.mapJsonToObj(dataRequest, response, "password", String.class, implClass);
         try {
             //具体方法
-            User user = userMapper.queryUserByName(inputUser);
+            User user = userMapper.queryUserByName(username);
             System.out.println(user);
-            if (inputPassword.equals(user.getPassword()) && user.getRoleId().equals("1")) {
+            if (password.equals(user.getPassword()) && user.getRoleId().equals("1")) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser.html", "登陆成功");
-            }else if (inputPassword.equals(user.getPassword()) && !user.getRoleId().equals("1")) {
+            }else if (password.equals(user.getPassword()) && !user.getRoleId().equals("1")) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showAtc.html#article-" + user.getUserId(), "登陆成功");
             }else {
                 response = commonImpl.responseDeal(response, Global.ERROR, "/index.html", "密码错误");

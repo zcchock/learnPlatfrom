@@ -1,55 +1,55 @@
 package com.zc.shiro.model;
 
-import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 用于验证时记录用户信息的model
  */
 @SuppressWarnings("serial")
 public class UserCertificate implements Serializable {
-    private Long id; //编号
+    private int userId; //编号
     private String account;//账号（唯一）
-    private String username; //用户名
+    private String name; //用户名
     private String password; //密码
+    private String sex; //性别
+    private String email; //邮箱
+    private String phone; //号码
     private String salt; //加密密码的盐
-    private List<Long> roleIds; //拥有的角色列表
+    private String roleId; //拥有的角色列表
+    private String lastLoginTime; //最后登录时间
+
     private Boolean locked = Boolean.FALSE;
 
     public UserCertificate() {
     }
 
-    public UserCertificate(String username, String password) {
-        this.username = username;
+    public UserCertificate(String name, String password) {
+        this.name = name;
         this.password = password;
     }
 
-    public Long getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
-    
+
     public String getAccount() {
-		return account;
-	}
-
-	public void setAccount(String account) {
-		this.account = account;
-	}
-
-	public String getUsername() {
-        return username;
+        return account;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -60,6 +60,30 @@ public class UserCertificate implements Serializable {
         this.password = password;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getSalt() {
         return salt;
     }
@@ -68,47 +92,22 @@ public class UserCertificate implements Serializable {
         this.salt = salt;
     }
 
-    public String getCredentialsSalt() {
-        return account + salt;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public List<Long> getRoleIds() {
-        if(roleIds == null) {
-            roleIds = new ArrayList<Long>();
-        }
-        return roleIds;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 
-    public void setRoleIds(List<Long> roleIds) {
-        this.roleIds = roleIds;
+    public String getLastLoginTime() {
+        return lastLoginTime;
     }
 
-
-    public String getRoleIdsStr() {
-        if(CollectionUtils.isEmpty(roleIds)) {
-            return "";
-        }
-        StringBuilder s = new StringBuilder();
-        for(Long roleId : roleIds) {
-            s.append(roleId);
-            s.append(",");
-        }
-        return s.toString();
+    public void setLastLoginTime(String lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
     }
 
-    public void setRoleIdsStr(String roleIdsStr) {
-        if(StringUtils.isEmpty(roleIdsStr)) {
-            return;
-        }
-        String[] roleIdStrs = roleIdsStr.split(",");
-        for(String roleIdStr : roleIdStrs) {
-            if(StringUtils.isEmpty(roleIdStr)) {
-                continue;
-            }
-            getRoleIds().add(Long.valueOf(roleIdStr));
-        }
-    }
-    
     public Boolean getLocked() {
         return locked;
     }
@@ -117,32 +116,36 @@ public class UserCertificate implements Serializable {
         this.locked = locked;
     }
 
-    @Override
+/*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         UserCertificate userCertificate = (UserCertificate) o;
 
-        if (id != null ? !id.equals(userCertificate.id) : userCertificate.id != null) return false;
+        if (userId != null ? !userId.equals(userCertificate.userId) : userCertificate.userId != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
+        return userId != null ? userId.hashCode() : 0;
+    }*/
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
+        return "UserCertificate{" +
+                "userId=" + userId +
                 ", account='" + account + '\'' +
-                ", username='" + username + '\'' +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
                 ", salt='" + salt + '\'' +
-                ", roleIds=" + roleIds +
+                ", roleId='" + roleId + '\'' +
+                ", lastLoginTime='" + lastLoginTime + '\'' +
                 ", locked=" + locked +
                 '}';
     }

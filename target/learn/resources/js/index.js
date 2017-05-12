@@ -12,10 +12,9 @@ var loginFunction = (function ($) {
             var inputUser = $('#inputUser').val();
             var inputPassword = $('#inputPassword').val();
             var reqdata = {
-                data: {
-                    inputUser: inputUser,
-                    inputPassword: inputPassword
-                }
+                "username":inputUser,
+                "password":inputPassword,
+                "rememberMe":"0"
             }
             toastr["info"]("正在登陆，请稍候。", "提示");
             $.ajax({
@@ -26,11 +25,10 @@ var loginFunction = (function ($) {
                 success: function (resp) {
                     if (resp.status === "success") {
                          var str = JSON.parse(resp.data);
-                        window.location.href = str;
+                        window.location.href =  str;
                         toastr["success"](resp.message, "成功提示");
-                    } else {
+                    } else 
                         toastr["error"](resp.message, "错误提示");
-                    }
                 },
                 error: errCallback
             });

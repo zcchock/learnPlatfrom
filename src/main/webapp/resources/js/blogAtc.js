@@ -62,7 +62,7 @@ var atcFunction = (function ($) {
 
     return {
         /*文章详情*/
-        detailAtc: function (event) {
+        /*detailAtc: function (event) {
             var atcId = (event.target.id).substring(7, (event.target.id).length);
             var reqData = {
                 data: {
@@ -70,7 +70,7 @@ var atcFunction = (function ($) {
                 }
             };
             
-        },
+        },*/
         /*删除文章*/
         deleteAtc: function (event) {
             var atcId = (event.target.id).substring(7, (event.target.id).length);
@@ -103,7 +103,6 @@ var atcFunction = (function ($) {
         },
 
         addAtc:function (event) {
-
             var formHtml = $("#atc-add-form").html();
             bootbox.dialog({
                 message: formHtml,

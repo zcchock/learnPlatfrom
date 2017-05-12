@@ -6,6 +6,11 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
+import com.zc.api.DataResponse;
+import com.zc.api.Global;
+import com.zc.api.JsonUtil;
+import com.zc.api.loginData;
+import com.zc.mapper.CommonImpl;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
@@ -17,6 +22,7 @@ import org.slf4j.LoggerFactory;
 public class AuthcAuthenticationFilter extends FormAuthenticationFilter {
 
 	private static final Logger log = LoggerFactory.getLogger(AuthcAuthenticationFilter.class);
+	private CommonImpl commonImpl = new CommonImpl();
 
 	@Override
 	protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
@@ -119,8 +125,9 @@ public class AuthcAuthenticationFilter extends FormAuthenticationFilter {
 	protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request,
 			ServletResponse response) throws Exception {
 		log.info("身份认证通过");
-		// we handled the success redirect directly, prevent the chain from
-		// continuing:
+		DataResponse dataResponse = new DataResponse();
+		dataResponse = commonImpl.responseDeal(dataResponse, Global.SUCCESS, "/showUser.html", "登陆成功");
+		JsonUtil.responseOutWithJson(response, dataResponse);
 		return false;
 	}
 

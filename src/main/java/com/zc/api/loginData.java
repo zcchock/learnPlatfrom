@@ -1,16 +1,13 @@
 package com.zc.api;
 
-import java.io.Serializable;
-
 /**
- * Created by chock on 2017/4/3.
+ * Created by chock on 2017/5/12.
  */
-public class DataResponse implements Serializable {
-
+public class loginData {
     private String status = "error";    // status: success or error
     private String code = "200";
     private String message;
-    private Object data;
+    private String data;
 
     public String getStatus() {
         return status;
@@ -36,21 +33,18 @@ public class DataResponse implements Serializable {
         this.message = message;
     }
 
-    public Object getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    @Override
-    public String toString() {
-        return "DataResponse{" +
-                "status='" + status + '\'' +
-                ", code='" + code + '\'' +
-                ", message='" + message + '\'' +
-                ", data=" + data +
-                '}';
+    public loginData(String status, String code, String message, String data) {
+        this.status = status;
+        this.code = code;
+        this.message = message;
+        this.data = data;
     }
 }
