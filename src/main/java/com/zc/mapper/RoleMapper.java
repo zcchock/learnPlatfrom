@@ -11,7 +11,7 @@ public interface RoleMapper {
 
     Role queryById(int roleId);
 
-    String queryNameById(String roleId);
+    String queryNameById(int roleId);
 
     List<Role> queryAll();
 

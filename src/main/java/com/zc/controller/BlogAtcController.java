@@ -2,6 +2,7 @@ package com.zc.controller;
 
 import com.zc.api.DataRequest;
 import com.zc.api.DataResponse;
+import com.zc.api.isNumber;
 import com.zc.service.BlogAtcService;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * Created by chock on 2017/4/29.
@@ -23,6 +25,7 @@ public class BlogAtcController {
 
     //日志打印
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private isNumber num = new isNumber();
 
     @Autowired
     private HttpServletRequest request;
@@ -52,11 +55,11 @@ public class BlogAtcController {
     public DataResponse getAtcsByUid(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
-        Object value = dataRequest.getData();
+        Map<String, String> value = (Map<String, String>) dataRequest.getData();
         DataResponse dataResponse = new DataResponse();
-        if (value.toString().length() == 1) {
+        if (num.isNumeric(value.get("userId"))) {
             dataResponse = blogAtcService.getActsByUid(dataRequest);
-        } else if ("all".equals(value.toString())) {
+        } else if ("all".equals(value.get("userId"))) {
             dataResponse = blogAtcService.getAllAtcs(dataRequest);
         } else {
             dataResponse = blogAtcService.getActsByType(dataRequest);

@@ -78,9 +78,9 @@ public class UserServiceImpl implements UserService {
             //具体方法
             User user = userMapper.queryUserByName(username);
             System.out.println(user);
-            if (password.equals(user.getPassword()) && user.getRoleId().equals("1")) {
+            if (password.equals(user.getPassword()) && user.getRoleId() == 1) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser.html", "登陆成功");
-            }else if (password.equals(user.getPassword()) && !user.getRoleId().equals("1")) {
+            }else if (password.equals(user.getPassword()) && user.getRoleId() != 1) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showAtc.html#article-" + user.getUserId(), "登陆成功");
             }else {
                 response = commonImpl.responseDeal(response, Global.ERROR, "/index.html", "密码错误");
@@ -125,7 +125,7 @@ public class UserServiceImpl implements UserService {
         try {
             User inputUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);
 //            inputUser.setUserId(userMapper.countUser() + 1);
-            inputUser.setRoleId("1");
+//            inputUser.setRoleId(1);
             inputUser.setLastLoginTime(dateUtils.formatDateTimeN(new Date()));
             int sucFlag = userMapper.insertSelective(inputUser);
             if (sucFlag == 1) {
