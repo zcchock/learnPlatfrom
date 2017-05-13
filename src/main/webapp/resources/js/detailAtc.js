@@ -48,6 +48,11 @@ var atcDetailFunction = (function ($) {
         } else {
             toastr["error"](resp.message, "错误提示");
         }
+
+       /* var editor1 = new Simditor({
+            textarea: $('#editor1')
+        });*/
+
     }
 
     /*ajax请求通用错误返回*/

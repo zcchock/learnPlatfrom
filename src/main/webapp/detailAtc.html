@@ -13,6 +13,11 @@
     <script type="text/javascript" src="/resources/js/index.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- simditor -->
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/module.js"></script>
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/hotkeys.js"></script>
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/uploader.js"></script>
+    <script type="text/javascript" src="/resources/js/simditor/2.3.6/simditor.js"></script>
     <!-- toastr -->
     <script src="/resources/js/toastr/2.1.2/toastr.min.js"></script>
     <script src="/resources/js/bootbox/4.4.0/bootbox.min.js"></script>
@@ -76,12 +81,17 @@
 
     <div class="form-group" id="title" readonly="readonly"></div>
 
-    <div class="form-inline">
-        <div class="form-group" id="author" readonly="readonly"></div>
-        <button id="addFri" type="button" class="btn" onclick="atcDetailFunction.addFri()">添加好友</button>
+    <div class="form-group" style="text-align:right">
+
+        <a role="button" onclick="atcDetailFunction.addFri()">添加好友<span class="glyphicon glyphicon-plus"></span></a>
     </div>
     <div class="form-group" id="content" readonly="readonly"></div>
     <!--<textarea id="content" readonly="readonly"></textarea>-->
+
+    <!--<div class="form-group">
+        <textarea id="editor1" placeholder="请输入你的内容" autofocus></textarea>
+    </div>-->
+
 </div>
 
 

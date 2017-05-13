@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by chock on 2017/5/12.
  */
@@ -46,7 +48,7 @@ public class FriendServiceImpl implements FriendService {
         return null;
     }
 
-    public DataResponse insert(DataRequest dataRequest) {
+    public DataResponse insert(DataRequest dataRequest, HttpServletRequest request) {
         DataResponse response = new DataResponse();
         try {
             Integer atcId = (Integer) commonImpl.mapJsonToObj(dataRequest, response, "atcId", Integer.class, implClass);
@@ -54,7 +56,7 @@ public class FriendServiceImpl implements FriendService {
             BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
             //添加好友实体
             UserFriend userFriend = new UserFriend();
-            userFriend.setUserId(1);
+            userFriend.setUserId((Integer) request.getAttribute("userId"));
             userFriend.setFriId(blogAtc.getUserId());
             int sucFlag = friendMapper.insertSelective(userFriend);
             if (sucFlag == 1) {

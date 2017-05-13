@@ -2,7 +2,7 @@
  * Created by chock on 2017/4/30.
  */
 var atcFunction = (function ($) {
-
+    /*初始化页面*/
     $(function () {
         var id = window.location.hash;
         var reqData = {
@@ -18,7 +18,6 @@ var atcFunction = (function ($) {
             success: getSuccess,
             error: errCallback
         })
-
     })
 
     /*ajax请求通用错误返回*/

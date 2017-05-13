@@ -33,7 +33,7 @@ public class FriendController {
     public DataResponse addFri(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
-        DataResponse dataResponse = friendService.insert(dataRequest);
+        DataResponse dataResponse = friendService.insert(dataRequest, request);
         return dataResponse;
     }
 }
