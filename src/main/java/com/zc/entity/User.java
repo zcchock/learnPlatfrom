@@ -9,7 +9,7 @@ public class User {
     private String account;
     private String name;
     private String password;
-    private String roleId;
+    private int roleId;
     private String sex;
     private String email;
     private String phone;
@@ -47,11 +47,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRoleId() {
+    public int getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(String roleId) {
+    public void setRoleId(int roleId) {
         this.roleId = roleId;
     }
 
