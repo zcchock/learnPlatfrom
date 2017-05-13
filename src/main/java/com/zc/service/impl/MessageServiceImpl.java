@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -71,11 +72,12 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
-    public DataResponse insert(DataRequest dataRequest) {
+    public DataResponse insert(DataRequest dataRequest, HttpServletRequest request) {
         DataResponse response = new DataResponse();
         try {
             Message msg = (Message) commonImpl.mapJsonToObj(dataRequest, response, "message", Message.class, implClass);
             msg.setMsgTime(dateUtils.formatDateTimeN(new Date()));
+            msg.setUserId((Integer) request.getAttribute("userId"));
             int sucFlag = messageMapper.insertSelective(msg);
             if (sucFlag == 1) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, sucFlag, "添加成功");

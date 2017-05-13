@@ -5,8 +5,8 @@ package com.zc.entity;
  */
 public class Message {
     private int msgId;
-    private String atcId;
-    private String userId;
+    private int atcId;
+    private int userId;
     private String msgTime;
     private String msgContent;
     private Integer msgOwn;
@@ -21,19 +21,19 @@ public class Message {
         this.msgId = msgId;
     }
 
-    public String getAtcId() {
+    public int getAtcId() {
         return atcId;
     }
 
-    public void setAtcId(String atcId) {
+    public void setAtcId(int atcId) {
         this.atcId = atcId;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

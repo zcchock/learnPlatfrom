@@ -82,7 +82,33 @@ var atcDetailFunction = (function ($) {
                 },
                 error: errCallback
             });
+        },
+        addMsg:function () {
+            alert();
+            var content =  $("#msg").val();
+            var reqData = {
+                data: {
+                    atcId: id,
+                    mshContent: content
+                }
+            }
+            toastr["info"]("正在添加，请稍候。", "提示");
+            $.ajax({
+                url: "/msg/addMsg",
+                contentType: "application/json",
+                type: "POST",
+                data: JSON.stringify(reqData),
+                success: function (resp) {
+                    if (resp.status === "success") {
+                        toastr["success"](resp.message, "成功提示");
+                    } else {
+                        toastr["error"](resp.message, "错误提示");
+                    }
+                },
+                error: errCallback
+            });
         }
+        
     }
 
 
