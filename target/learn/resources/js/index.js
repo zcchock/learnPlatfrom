@@ -32,6 +32,21 @@ var loginFunction = (function ($) {
                 },
                 error: errCallback
             });
+        },
+
+        logout: function () {
+            var reqdata = {}
+            $.ajax({
+                url: "/user/logout",
+                contentType: "application/json",
+                type: "POST",
+                data: JSON.stringify(reqdata),
+                success: function () {
+                    toastr["success"]("注销成功", "成功提示");
+                },
+                error: errCallback
+            });
         }
+        
     };
 })($);
