@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zc.mapper.MessageMapper">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="queryById" resultType="Message" parameterType="Integer">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        message
+        WHERE
+        msg_id = #{msgId}
+    </select>
+
+    <select id="queryByActId" resultType="Message" parameterType="Integer">
+        <!-- 具体的sql -->
+        SELECT
+        *
+        FROM
+        message
+        WHERE
+        atc_id = #{atcId}
+        ORDER BY
+        msg_time
+    </select>
+
+    <select id="queryAll" resultType="Message">
+        SELECT
+        *
+        FROM
+        message
+        ORDER BY
+        msg_time
+    </select>
+
+    <insert id="insertSelective" parameterType="com.zc.entity.Message">
+        insert into message
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="atcId != null">
+                atc_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="msgTime != null">
+                msg_time,
+            </if>
+            <if test="msgContent != null">
+                msg_content,
+            </if>
+            <if test="msgOwn != null">
+                msg_own,
+            </if>
+            <if test="msgType != null">
+                msg_type,
+            </if>
+            <if test="msgReturnFlag != null">
+                msg_return_flag,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="atcId != null">
+                #{atcId,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="msgTime != null">
+                #{msgTime,jdbcType=VARCHAR},
+            </if>
+            <if test="msgContent != null">
+                #{msgContent,jdbcType=VARCHAR},
+            </if>
+            <if test="msgOwn != null">
+                #{msgOwn,jdbcType=INTEGER},
+            </if>
+            <if test="msgType != null">
+                #{msgType,jdbcType=VARCHAR},
+            </if>
+            <if test="msgReturnFlag != null">
+                #{msgReturnFlag,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delById" parameterType="Integer">
+        DELETE
+        FROM
+        message
+        WHERE
+        msg_id = #{msgId}
+    </delete>
+
+</mapper>
