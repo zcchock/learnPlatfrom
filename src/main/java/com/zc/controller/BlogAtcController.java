@@ -4,6 +4,7 @@ import com.zc.api.DataRequest;
 import com.zc.api.DataResponse;
 import com.zc.api.isNumber;
 import com.zc.service.BlogAtcService;
+import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,7 @@ public class BlogAtcController {
     @Autowired
     private BlogAtcService blogAtcService;
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public DataResponse userList(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -41,7 +42,7 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/getAtc", method = RequestMethod.POST)
     public DataResponse getUserById(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -50,7 +51,7 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/getAtcs", method = RequestMethod.POST)
     public DataResponse getAtcsByUid(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -67,7 +68,7 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/addAtc", method = RequestMethod.POST)
     public DataResponse addAtc(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -76,7 +77,7 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public DataResponse updateUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -85,7 +86,7 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public DataResponse delUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

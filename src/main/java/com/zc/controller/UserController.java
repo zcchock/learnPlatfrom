@@ -2,6 +2,7 @@ package com.zc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +55,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     public DataResponse getUserById(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -86,8 +87,8 @@ public class UserController {
 		}
 		return "/index.html";
 	}
-    
-    @RequiresRoles("admin")
+
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/admin", method = RequestMethod.POST)
    	public DataResponse admin(HttpServletRequest request)throws Exception{
    		LOGGER.info("damin");
@@ -102,7 +103,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -117,7 +118,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public DataResponse delUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -132,7 +133,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public DataResponse updateUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

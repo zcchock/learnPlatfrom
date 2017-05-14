@@ -3,6 +3,7 @@ package com.zc.controller;
 import com.zc.api.DataRequest;
 import com.zc.api.DataResponse;
 import com.zc.service.MessageService;
+import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,7 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
 
-    @RequiresRoles("admin")
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/addMsg", method = RequestMethod.POST)
     public DataResponse addMsg(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

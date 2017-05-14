@@ -4,14 +4,11 @@
     <list default="true" id="1c48a811-7788-4cc1-8bc8-2ce254f6ebb5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/detailAtc.html" afterPath="$PROJECT_DIR$/src/main/webapp/detailAtc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/detailAtc.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/detailAtc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showAtc.html" afterPath="$PROJECT_DIR$/src/main/webapp/showAtc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showUser.html" afterPath="$PROJECT_DIR$/src/main/webapp/showUser.html" />
     </list>
     <ignored path="mavenPalt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,16 +32,6 @@
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - blogdb@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -52,18 +39,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="blogAtc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-              <folding>
-                <element signature="e#3248#5202#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/service/impl/MessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,8 +74,8 @@
       <file leaf-file-name="showAtc.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/showAtc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+            <state relative-caret-position="209">
+              <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -116,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detailAtc.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detailAtc.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/detailAtc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="171">
+              <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -139,8 +114,28 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+            <state relative-caret-position="90">
+              <caret line="135" column="66" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-115">
+              <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogAtcController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1406">
+              <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -221,7 +216,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zc/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/mapper/RoleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/api/isNumber.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/main.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/UserService.java" />
@@ -237,15 +231,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/MessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/entity/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/impl/MessageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/BlogAtcMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/detailAtc.js" />
         <option value="dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.message" />
         <option value="$PROJECT_DIR$/src/main/webapp/showUser.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/detailAtc.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/showAtc.html" />
       </list>
     </option>
@@ -1481,7 +1476,7 @@
       <workItem from="1494642828063" duration="3060000" />
       <workItem from="1494650746995" duration="16028000" />
       <workItem from="1494676473001" duration="13052000" />
-      <workItem from="1494729646321" duration="936000" />
+      <workItem from="1494729646321" duration="2972000" />
     </task>
     <task id="LOCAL-00001" summary="成功运行（登录功能未完成）">
       <created>1491381665917</created>
@@ -1819,7 +1814,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494684808872</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="导航栏不刷新bug修复">
+      <created>1494730635197</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1494730635197</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1855,7 +1857,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243582000" />
+    <option name="totallyTimeSpent" value="245618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="753" extended-state="6" />
@@ -1913,7 +1915,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="①实现不同用户角色登录的默认页面&#10;②实现博客文章的删除功能" />
     <MESSAGE value="更新查询用户文章时的提示" />
     <MESSAGE value="添加simditor的插件js和css&#10;添加fileinput的插件js和css" />
     <MESSAGE value="实现新增文章功能（单个功能）" />
@@ -1938,7 +1939,8 @@
     <MESSAGE value="留言板前端完成" />
     <MESSAGE value="评论表相关文件添加" />
     <MESSAGE value="留言 后台功能代码添加" />
-    <option name="LAST_COMMIT_MESSAGE" value="留言 后台功能代码添加" />
+    <MESSAGE value="导航栏不刷新bug修复" />
+    <option name="LAST_COMMIT_MESSAGE" value="导航栏不刷新bug修复" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2005,18 +2007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.user">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/entity/Role.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -2069,18 +2059,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="88" column="36" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2088,6 +2071,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2281,6 +2265,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2288,16 +2273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2340,14 +2315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -2364,14 +2331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/showAtc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/showUser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -2382,8 +2341,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/detailAtc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="171">
+          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.user">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/showAtc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="135" column="66" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
           <folding />
         </state>
       </provider>
