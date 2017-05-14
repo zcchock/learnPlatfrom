@@ -161,10 +161,25 @@ var userFunction = (function ($) {
                 error: errCallback
             })
         },
+        
+        
 
 
         /*查看当前用户详情*/
         viewOwnUser: function () {
+
+            /*var req = new Request('/user/getId', {method: 'GET', cache: 'reload'});
+            var userId = "";
+            function getUserId() {
+                fetch(req).then(function(response) {
+                    return response.json();
+                }).then(function(json) {
+                    userId = json.userId
+                });
+            }
+
+            getUserId()*/
+
             var reqData = {
                 data: {
                     userId: 1

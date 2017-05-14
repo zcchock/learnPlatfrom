@@ -5,7 +5,7 @@ var atcDetailFunction = (function ($) {
 
     var id = window.location.hash;
     id = id.substring(8);
-    
+
     $(function () {
         // var id = window.location.hash;
         var reqData = {
@@ -49,9 +49,9 @@ var atcDetailFunction = (function ($) {
             toastr["error"](resp.message, "错误提示");
         }
 
-       /* var editor1 = new Simditor({
-            textarea: $('#editor1')
-        });*/
+        /* var editor1 = new Simditor({
+         textarea: $('#editor1')
+         });*/
 
     }
 
@@ -59,12 +59,12 @@ var atcDetailFunction = (function ($) {
     function errCallback(resp) {
         toastr["error"]("请求失败", "网络异常");
     }
-    
-    return{
-        addFri:function () {
+
+    return {
+        addFri: function () {
             var reqData = {
                 data: {
-                        atcId: id
+                    atcId: id
                 }
             }
             toastr["info"]("正在添加，请稍候。", "提示");
@@ -83,13 +83,14 @@ var atcDetailFunction = (function ($) {
                 error: errCallback
             });
         },
-        addMsg:function () {
-            alert();
-            var content =  $("#msg").val();
+        addMsg: function () {
+            var content = $("#msg").val();
             var reqData = {
                 data: {
-                    atcId: id,
-                    mshContent: content
+                    message: {
+                        atcId: id,
+                        mshContent: content
+                    }
                 }
             }
             toastr["info"]("正在添加，请稍候。", "提示");
@@ -108,7 +109,7 @@ var atcDetailFunction = (function ($) {
                 error: errCallback
             });
         }
-        
+
     }
 
 

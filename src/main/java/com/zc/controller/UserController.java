@@ -63,6 +63,14 @@ public class UserController {
         return dataResponse;
     }
 
+
+   /* @RequiresRoles("admin")
+    @RequestMapping(value = "/getId", method = RequestMethod.GET)
+    public String getId() {
+        String userId = (String) request.getAttribute("userId");
+        return userId;
+    }*/
+
     /*@RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
