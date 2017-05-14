@@ -103,7 +103,7 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+//    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

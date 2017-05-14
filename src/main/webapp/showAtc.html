@@ -21,7 +21,6 @@
     <script type="text/javascript" src="/resources/js/simditor/2.3.6/simditor.js"></script>
     <!-- toastr -->
     <script src="/resources/js/toastr/2.1.2/toastr.min.js"></script>
-    <!-- toastr -->
     <script src="/resources/js/bootbox/4.4.0/bootbox.min.js"></script>
 
     <!-- 新 Bootstrap 核心 CSS 文件 -->
@@ -33,6 +32,10 @@
 
 <script>
     function abc(str){
+        window.location.href="./showAtc.html#article-" + str;
+        window.location.reload()
+    }
+    function ind(str){
         window.location.href="./showAtc.html#article-" + str;
         window.location.reload()
     }
@@ -57,7 +60,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">概述 <span class="sr-only">(current)</span></a></li>
+                        <li class="active"><a onclick="ind('1')">概述 <span class="sr-only">(current)</span></a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">资料分类<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -104,6 +107,7 @@
             <tr>
                 <th>ID</th>
                 <th>标题</th>
+                <th>类型</th>
                 <th>url</th>
                 <th>浏览次数</th>
                 <th>操作</th>

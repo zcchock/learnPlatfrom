@@ -14,6 +14,7 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- toastr -->
     <script src="/resources/js/toastr/2.1.2/toastr.min.js"></script>
+    <script src="/resources/js/bootbox/4.4.0/bootbox.min.js"></script>
 
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -46,11 +47,41 @@
                     </div>
                     <span class="text">Remember me</span>
                     <button type="button" class="btn btn-default" id="loginSub" onclick="loginFunction.login()">登录</button>
+                    <a id="register" onclick="loginFunction.register()">注册用户</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+
+<!-- user-register-form -->
+<script id="user-register-form" type="text/html">
+    <div class="form-group">
+        <label for="register-account">Account:</label>
+        <input type="text" class="form-control" id="register-account" placeholder="Enter Account:"/>
+    </div>
+    <div class="form-group">
+        <label for="register-name">Name:</label>
+        <input type="text" class="form-control" id="register-name" placeholder="Enter Name:"/>
+    </div>
+    <div class="form-group">
+        <label for="register-sex">Sex:</label>
+        <input type="text" class="form-control" id="register-sex" placeholder="Enter Sex:"/>
+    </div>
+    <div class="form-group">
+        <label for="register-password">Password:</label>
+        <input type="password" class="form-control" id="register-password" placeholder="Enter Password:"/>
+    </div>
+    <div class="form-group">
+        <label for="register-email">Email:</label>
+        <input type="email" class="form-control" id="register-email" placeholder="Enter Email:"/>
+    </div>
+    <div class="form-group">
+        <label for="register-phone">Phone:</label>
+        <input type="text" class="form-control" id="register-phone" placeholder="Enter Phone:"/>
+    </div>
+</script>
 
 </body>
 </html>

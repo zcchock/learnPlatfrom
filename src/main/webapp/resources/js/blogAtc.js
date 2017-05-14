@@ -33,6 +33,7 @@ var atcFunction = (function ($) {
                 str += '<tr>';
                 str += '<th>' + tables[arr].atcId + '</th>' +
                     '<th>' + tables[arr].atcTitle + '</th>' +
+                    '<th>' + tables[arr].atcType + '</th>' +
                     '<th>' + tables[arr].atcUrl + '</th>' +
                     '<th>' + tables[arr].atcView + '</th>' +
                     '<th><button type="button" class="btn btn-info" id="detail-' + tables[arr].atcId + '"><a href="./detailAtc.html#detail-' + tables[arr].atcId + '">查看文章</a></button>' +

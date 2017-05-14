@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c48a811-7788-4cc1-8bc8-2ce254f6ebb5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/sql/建表语句3.0.sql" />
+    <list default="true" id="1c48a811-7788-4cc1-8bc8-2ce254f6ebb5" name="Default" comment="添加新的sql文件">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/service/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/service/impl/UserServiceImpl.class" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="showUser.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/showUser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+            <state relative-caret-position="145">
+              <caret line="125" column="87" selection-start-line="125" selection-start-column="87" selection-end-line="125" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -1065,14 +1064,7 @@
       <workItem from="1494676473001" duration="13052000" />
       <workItem from="1494729646321" duration="11934000" />
       <workItem from="1494743312766" duration="312000" />
-      <workItem from="1494744230322" duration="2670000" />
-    </task>
-    <task id="LOCAL-00004" summary="登录功能">
-      <created>1491465913915</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1491465913915</updated>
+      <workItem from="1494744230322" duration="2721000" />
     </task>
     <task id="LOCAL-00005" summary="用户相关页面（初步）">
       <created>1492482041306</created>
@@ -1410,7 +1402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494741808601</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="添加新的sql文件">
+      <created>1494746938759</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1494746938823</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1446,7 +1445,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257562000" />
+    <option name="totallyTimeSpent" value="257613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="753" extended-state="6" />
@@ -1504,7 +1503,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加写进文件方法类，实现新增文章后内容存到本地文件中" />
     <MESSAGE value="添加读取文件方法（查看文章详情时ajax填充页面失败）" />
     <MESSAGE value="解决了删除文章按钮失效问题（原因：上一控件的标签没有关闭）" />
     <MESSAGE value="添加文章表的备用字段，存放作者名" />
@@ -1529,7 +1527,8 @@
     <MESSAGE value="权限分配" />
     <MESSAGE value="角色分流" />
     <MESSAGE value="添加用户属性的获取当前用户信息成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加用户属性的获取当前用户信息成功" />
+    <MESSAGE value="添加新的sql文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加新的sql文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1954,8 +1953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/showUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
+        <state relative-caret-position="145">
+          <caret line="125" column="87" selection-start-line="125" selection-start-column="87" selection-end-line="125" selection-end-column="87" />
           <folding />
         </state>
       </provider>

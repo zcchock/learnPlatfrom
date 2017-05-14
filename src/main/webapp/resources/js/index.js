@@ -46,6 +46,61 @@ var loginFunction = (function ($) {
                 },
                 error: errCallback
             });
+        },
+        
+        register: function () {
+            var formHtml = $("#user-register-form").html();
+            bootbox.dialog({
+                message: formHtml,
+                title: "注册",
+                buttons: {
+                    cancel: {
+                        label: "取消",
+                        className: "btn-default"
+                    },
+                    save: {
+                        label: "确定",
+                        className: "btn-primary",
+                        callback: function () {
+                            var account = $("#register-account").val();
+                            var name = $("#register-name").val();
+                            var sex = $("#register-sex").val();
+                            var password = $("#register-password").val();
+                            var email = $("#register-email").val();
+                            var phone = $("#register-phone").val();
+                            var resData = {
+                                data: {
+                                    user: {
+                                        account: account,
+                                        name: name,
+                                        sex: sex,
+                                        password: password,
+                                        email: email,
+                                        phone: phone
+                                    }
+                                }
+                            }
+                            toastr["info"]("正在保存，请稍候。", "提示");
+                            $.ajax({
+                                url: "/user/addUser",
+                                contentType: "application/json",
+                                method: "POST",
+                                data: JSON.stringify(resData),
+                                success: function (resp) {
+                                    if (resp.status === "success") {
+                                        toastr["success"](resp.message, "成功提示");
+                                        window.location.reload();
+                                    } else {
+                                        toastr["error"](resp.message, "错误提示");
+                                    }
+                                },
+                                error: errCallback
+                            });
+                        }
+                    }
+                }
+            });
+
         }
         
     };
