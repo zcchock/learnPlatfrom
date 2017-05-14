@@ -103,9 +103,17 @@ public class UserController {
      * @param dataRequest
      * @return
      */
-//    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public DataResponse addUser(@RequestBody(required = false) DataRequest dataRequest) {
+        String clientIp = request.getRemoteAddr();
+        dataRequest.setClientIp(clientIp);
+        DataResponse dataResponse = userService.addUser(dataRequest);
+        return dataResponse;
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public DataResponse register(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
         dataRequest.setClientIp(clientIp);
         DataResponse dataResponse = userService.addUser(dataRequest);

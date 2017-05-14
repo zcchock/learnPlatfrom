@@ -82,7 +82,7 @@ var loginFunction = (function ($) {
                             }
                             toastr["info"]("正在保存，请稍候。", "提示");
                             $.ajax({
-                                url: "/user/addUser",
+                                url: "/user/register",
                                 contentType: "application/json",
                                 method: "POST",
                                 data: JSON.stringify(resData),
