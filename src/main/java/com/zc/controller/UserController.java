@@ -65,12 +65,12 @@ public class UserController {
     }
 
 
-   /* @RequiresRoles("admin")
-    @RequestMapping(value = "/getId", method = RequestMethod.GET)
-    public String getId() {
-        String userId = (String) request.getAttribute("userId");
-        return userId;
-    }*/
+    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    @RequestMapping(value = "/getId", method = RequestMethod.POST)
+    public DataResponse getId(@RequestBody(required = false) DataRequest dataRequest, HttpServletRequest request) {
+        DataResponse dataResponse = userService.getId(dataRequest, request);
+        return dataResponse;
+    }
 
     /*@RequestMapping(value = "/login", method = RequestMethod.POST)
     public DataResponse userLogin(@RequestBody(required = false) DataRequest dataRequest) {

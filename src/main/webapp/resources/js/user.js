@@ -11,7 +11,9 @@ var userFunction = (function ($) {
             type: "POST",
             data: JSON.stringify(reqdata),
             success: getSuccess,
-            error: errCallback
+            error: function () {
+                
+            }
         });
     })
 
@@ -168,23 +170,6 @@ var userFunction = (function ($) {
         /*查看当前用户详情*/
         viewOwnUser: function () {
 
-            /*var req = new Request('/user/getId', {method: 'GET', cache: 'reload'});
-            var userId = "";
-            function getUserId() {
-                fetch(req).then(function(response) {
-                    return response.json();
-                }).then(function(json) {
-                    userId = json.userId
-                });
-            }
-
-            getUserId()*/
-
-            var reqData = {
-                data: {
-                    userId: 1
-                }
-            };
             var formHtml = $("#user-detail-form").html();
             //初始化文本框的内容
             function initView(user) {
@@ -195,32 +180,45 @@ var userFunction = (function ($) {
                 $("#detail-phone").val(user.phone);
                 $("#detail-lastLogin").val(user.lastLoginTime);
             }
-
+            var reqdata = {}
             $.ajax({
-                url: "/user/getUser",
+                url: "/user/getId",
                 contentType: "application/json",
                 type: "POST",
-                data: JSON.stringify(reqData),
+                data: JSON.stringify(reqdata),
                 success: function (resp) {
-                    if (resp.status === "success") {
-                        var user = JSON.parse(resp.data);
-                        bootbox.dialog({
-                            message: formHtml,
-                            title: "用户详情",
-                            buttons: {
-                                cancel: {
-                                    label: "取消",
-                                    className: "btn-default"
-                                }
+                    var reqData = {
+                        data: {
+                            userId: Number(resp.data)
+                        }
+                    };
+                    $.ajax({
+                        url: "/user/getUser",
+                        contentType: "application/json",
+                        type: "POST",
+                        data: JSON.stringify(reqData),
+                        success: function (resp) {
+                            if (resp.status === "success") {
+                                var user = JSON.parse(resp.data);
+                                bootbox.dialog({
+                                    message: formHtml,
+                                    title: "用户详情",
+                                    buttons: {
+                                        cancel: {
+                                            label: "取消",
+                                            className: "btn-default"
+                                        }
+                                    }
+                                }).init(function () {
+                                    initView.call(this, user);
+                                });
+                            } else {
+                                toastr["error"](resp.message, "错误提示");
                             }
-                        }).init(function () {
-                            initView.call(this, user);
-                        });
-                    } else {
-                        toastr["error"](resp.message, "错误提示");
-                    }
-                },
-                error: errCallback
+                        },
+                        error: errCallback
+                    })
+                }
             })
         },
 
@@ -345,6 +343,8 @@ var userFunction = (function ($) {
 
         /*更新当前用户信息*/
         updateOwnUser: function () {
+            
+            var formHtml = $("#user-update-form").html();
             //初始化文本框的内容
             function initView(user) {
                 $("#update-userId").val(user.userId);
@@ -354,79 +354,85 @@ var userFunction = (function ($) {
                 $("#update-email").val(user.email);
                 $("#update-phone").val(user.phone);
             }
-
-            // var userId = (event.target.id).substring(7, (event.target.id).length);
-            var reqData = {
-                data: {
-                    userId: 1
-                }
-            };
-            var formHtml = $("#user-update-form").html();
+            var reqdata = {}
             $.ajax({
-                url: "/user/getUser",
+                url: "/user/getId",
                 contentType: "application/json",
                 type: "POST",
-                data: JSON.stringify(reqData),
+                data: JSON.stringify(reqdata),
                 success: function (resp) {
-                    if (resp.status === "success") {
-                        var user = JSON.parse(resp.data);
-                        bootbox.dialog({
-                            message: formHtml,
-                            title: "修改用户",
-                            buttons: {
-                                cancel: {
-                                    label: "取消",
-                                    className: "btn-default"
-                                },
-                                save: {
-                                    label: "保存",
-                                    className: "btn-primary",
-                                    callback: function () {
-                                        var userId = $("#update-userId").val();
-                                        var name = $("#update-name").val();
-                                        var password = $("#update-password").val();
-                                        var sex = $("#update-sex").val();
-                                        var email = $("#update-email").val();
-                                        var phone = $("#update-phone").val();
-                                        var resData = {
-                                            data: {
-                                                user: {
-                                                    userId: userId,
-                                                    name: name,
-                                                    password: password,
-                                                    sex: sex,
-                                                    email: email,
-                                                    phone: phone
+                    var reqData = {
+                        data: {
+                            userId: Number(resp.data)
+                        }
+                    };
+                    $.ajax({
+                        url: "/user/getUser",
+                        contentType: "application/json",
+                        type: "POST",
+                        data: JSON.stringify(reqData),
+                        success: function (resp) {
+                            if (resp.status === "success") {
+                                var user = JSON.parse(resp.data);
+                                bootbox.dialog({
+                                    message: formHtml,
+                                    title: "修改用户",
+                                    buttons: {
+                                        cancel: {
+                                            label: "取消",
+                                            className: "btn-default"
+                                        },
+                                        save: {
+                                            label: "保存",
+                                            className: "btn-primary",
+                                            callback: function () {
+                                                var userId = $("#update-userId").val();
+                                                var name = $("#update-name").val();
+                                                var password = $("#update-password").val();
+                                                var sex = $("#update-sex").val();
+                                                var email = $("#update-email").val();
+                                                var phone = $("#update-phone").val();
+                                                var resData = {
+                                                    data: {
+                                                        user: {
+                                                            userId: userId,
+                                                            name: name,
+                                                            password: password,
+                                                            sex: sex,
+                                                            email: email,
+                                                            phone: phone
+                                                        }
+                                                    }
                                                 }
+                                                toastr["info"]("正在保存，请稍候。", "提示");
+                                                $.ajax({
+                                                    url: "/user/update",
+                                                    contentType: "application/json",
+                                                    method: "POST",
+                                                    data: JSON.stringify(resData),
+                                                    success: function (resp) {
+                                                        if (resp.status === "success") {
+                                                            toastr["success"](resp.message, "成功提示");
+                                                            window.location.reload();
+                                                        } else {
+                                                            toastr["error"](resp.message, "错误提示");
+                                                        }
+                                                    },
+                                                    error: errCallback
+                                                });
                                             }
                                         }
-                                        toastr["info"]("正在保存，请稍候。", "提示");
-                                        $.ajax({
-                                            url: "/user/update",
-                                            contentType: "application/json",
-                                            method: "POST",
-                                            data: JSON.stringify(resData),
-                                            success: function (resp) {
-                                                if (resp.status === "success") {
-                                                    toastr["success"](resp.message, "成功提示");
-                                                    window.location.reload();
-                                                } else {
-                                                    toastr["error"](resp.message, "错误提示");
-                                                }
-                                            },
-                                            error: errCallback
-                                        });
                                     }
-                                }
+                                }).init(function () {
+                                    initView.call(this, user);
+                                });
+                            } else {
+                                toastr["error"](resp.message, "错误提示");
                             }
-                        }).init(function () {
-                            initView.call(this, user);
-                        });
-                    } else {
-                        toastr["error"](resp.message, "错误提示");
-                    }
-                },
-                error: errCallback
+                        },
+                        error: errCallback
+                    })
+                }
             })
         }
 

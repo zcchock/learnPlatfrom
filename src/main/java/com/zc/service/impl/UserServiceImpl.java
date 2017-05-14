@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -183,6 +184,13 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
         return response;
+    }
+
+    @Override
+    public DataResponse getId(DataRequest dataRequest, HttpServletRequest request) {
+        DataResponse response = new DataResponse();
+        Integer id = (Integer) request.getAttribute("userId");
+        return commonImpl.responseDeal(response, Global.SUCCESS, id, "查询用户成功");
     }
 
 }
