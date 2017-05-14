@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c48a811-7788-4cc1-8bc8-2ce254f6ebb5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/sql/建表语句3.0.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/service/UserService.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/service/UserService.class" afterPath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/service/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/service/impl/UserServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zc/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/zc/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showAtc.html" afterPath="$PROJECT_DIR$/src/main/webapp/showAtc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showUser.html" afterPath="$PROJECT_DIR$/src/main/webapp/showUser.html" />
     </list>
     <ignored path="mavenPalt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,51 +46,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1178">
-              <caret line="356" column="28" selection-start-line="356" selection-start-column="28" selection-end-line="356" selection-end-column="28" />
+            <state relative-caret-position="1273">
+              <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="117" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomRealm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/realm/CustomRealm.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+            <state relative-caret-position="399">
+              <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthcAuthenticationFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/web/filter/authc/AuthcAuthenticationFilter.java">
+      <file leaf-file-name="showUser.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/showUser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="221">
+              <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomUserFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/web/filter/authc/CustomUserFilter.java">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+            <state relative-caret-position="114">
+              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomLogoutFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/web/filter/authc/CustomLogoutFilter.java">
+      <file leaf-file-name="showAtc.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/showAtc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="-741">
+              <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -90,18 +99,8 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-978">
-              <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="162">
+              <caret line="105" column="68" selection-start-line="105" selection-start-column="68" selection-end-line="105" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -157,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/shiro/shiro.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/api/DataResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/api/JsonUtil.java" />
@@ -181,9 +179,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zc/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/mapper/RoleMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/api/isNumber.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/main.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/FriendService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/FriendController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/impl/FriendServiceImpl.java" />
@@ -197,17 +193,20 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/BlogAtcMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/detailAtc.js" />
         <option value="dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.message" />
-        <option value="$PROJECT_DIR$/src/main/webapp/showUser.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/detailAtc.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/BlogAtcController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/showAtc.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/shiro/web/filter/authc/AuthcAuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zc/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/showAtc.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/showUser.html" />
       </list>
     </option>
   </component>
@@ -265,12 +264,83 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="learnPlatfrom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,24 +357,24 @@
     <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file://E:/School/FinalDesign/learnPlatfrom/src/main/webapp/resources/js/user.js&#10;atc&#9;FILE&#9;file://E:/School/FinalDesign/learnPlatfrom/src/main/webapp/resources/js/blogAtc.js&#10;blo&#9;FILE&#9;file://E:/School/FinalDesign/learnPlatfrom/src/main/java/com/zc/controller/BlogAtcController.java&#10;deta&#9;FILE&#9;file://E:/School/FinalDesign/learnPlatfrom/src/main/webapp/detailAtc.html&#10;show&#9;FILE&#9;file://E:/School/FinalDesign/learnPlatfrom/src/main/webapp/showAtc.html" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\js\bootbox\4.4.0" />
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp" />
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\WEB-INF" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.zc.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\resources\sql" />
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\resources\mapper" />
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\css\simditor\2.3.6" />
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\js\simditor\2.3.6" />
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zc.api" />
       <recent name="com.zc.api.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\resources\mapper" />
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\css\simditor\2.3.6" />
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\js\simditor\2.3.6" />
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\images" />
-      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\css\bootstrap" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\resources\js\bootbox\4.4.0" />
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp" />
+      <recent name="E:\School\FinalDesign\learnPlatfrom\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.tom8">
@@ -993,14 +1063,9 @@
       <workItem from="1494642828063" duration="3060000" />
       <workItem from="1494650746995" duration="16028000" />
       <workItem from="1494676473001" duration="13052000" />
-      <workItem from="1494729646321" duration="11199000" />
-    </task>
-    <task id="LOCAL-00003" summary="登录">
-      <created>1491465753472</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1491465753472</updated>
+      <workItem from="1494729646321" duration="11934000" />
+      <workItem from="1494743312766" duration="312000" />
+      <workItem from="1494744230322" duration="2670000" />
     </task>
     <task id="LOCAL-00004" summary="登录功能">
       <created>1491465913915</created>
@@ -1338,7 +1403,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494738482816</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="添加用户属性的获取当前用户信息成功">
+      <created>1494741808601</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1494741808601</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1374,7 +1446,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253845000" />
+    <option name="totallyTimeSpent" value="257562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="753" extended-state="6" />
@@ -1391,12 +1463,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8129032" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11290322" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29354838" sideWeight="0.49676377" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23827533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26626325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1432,7 +1504,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="实现新增文章功能（单个功能）" />
     <MESSAGE value="添加写进文件方法类，实现新增文章后内容存到本地文件中" />
     <MESSAGE value="添加读取文件方法（查看文章详情时ajax填充页面失败）" />
     <MESSAGE value="解决了删除文章按钮失效问题（原因：上一控件的标签没有关闭）" />
@@ -1457,7 +1528,8 @@
     <MESSAGE value="导航栏不刷新bug修复" />
     <MESSAGE value="权限分配" />
     <MESSAGE value="角色分流" />
-    <option name="LAST_COMMIT_MESSAGE" value="角色分流" />
+    <MESSAGE value="添加用户属性的获取当前用户信息成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加用户属性的获取当前用户信息成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1473,22 +1545,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/mapper/FriendMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -1508,11 +1564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <marker date="1494607838625" expanded="true" signature="345:413" ph="SELECT * FRO... role" />
-            <marker date="1494607838625" expanded="true" signature="537:616" ph="SELECT type_... role" />
-            <marker date="1494607838625" expanded="true" signature="685:727" ph="SELECT * FRO... role" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1524,14 +1575,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.role">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1560,7 +1611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1572,14 +1622,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.user_friend">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1587,7 +1637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1602,12 +1651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <marker date="1494666654958" expanded="true" signature="351:436" ph="SELECT * FRO... message" />
-            <marker date="1494666654958" expanded="true" signature="560:679" ph="SELECT * FRO... message" />
-            <marker date="1494666654958" expanded="true" signature="751:830" ph="SELECT * FRO... message" />
-            <marker date="1494666654958" expanded="true" signature="2502:2577" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1669,40 +1712,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BlogAtcMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <marker date="1494601947717" expanded="true" signature="293:363" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="435:497" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="613:685" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="613:717" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="833:907" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="833:939" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="1056:1132" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="1056:1164" ph="SELECT * FRO... blog_atc" />
-            <marker date="1494601947717" expanded="true" signature="3203:4319" ph="update blog_... " />
-            <marker date="1494601947717" expanded="true" signature="4396:4472" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="e#3248#5202#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1718,7 +1731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,19 +1749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.message">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/service/impl/MessageServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1197">
@@ -1762,15 +1761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/showUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1778,7 +1768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,27 +1779,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/showAtc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/MessageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="532">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/web/filter/authc/CustomUserFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1818,33 +1793,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.blog_atc">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.user">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1852,7 +1803,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1860,14 +1813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding>
-            <marker date="1494694172312" expanded="true" signature="345:429" ph="SELECT * FRO... USER" />
-            <marker date="1494694172312" expanded="true" signature="552:637" ph="SELECT * FRO... USER" />
-            <marker date="1494694172312" expanded="true" signature="706:781" ph="SELECT * FRO... user" />
-            <marker date="1494694172312" expanded="true" signature="854:903" ph="SELECT count... user" />
-            <marker date="1494694172312" expanded="true" signature="2907:3533" ph="update user " />
-            <marker date="1494694172312" expanded="true" signature="3611:3685" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1891,24 +1836,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/realm/CustomRealm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="494">
           <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1536#1544#0" expanded="false" />
+            <element signature="e#2846#2847#0" expanded="false" />
+            <element signature="e#2881#2882#0" expanded="false" />
+            <element signature="e#2931#2932#0" expanded="false" />
+            <element signature="e#2969#2970#0" expanded="false" />
+            <element signature="e#3020#3021#0" expanded="false" />
+            <element signature="e#3059#3060#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.message">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.blog_atc">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/c4b3b6b4/4e3cee6d-a013-4071-969e-94b296200db0/blogdb.user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/shiro/web/filter/authc/CustomUserFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-978">
-          <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+        <state relative-caret-position="219">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql/建表语句3.0.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/blogAtc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="356" column="28" selection-start-line="356" selection-start-column="28" selection-end-line="356" selection-end-column="28" />
+        <state relative-caret-position="1273">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="117" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zc/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="105" column="68" selection-start-line="105" selection-start-column="68" selection-end-line="105" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/showAtc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/showUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="129" column="44" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
           <folding />
         </state>
       </provider>
