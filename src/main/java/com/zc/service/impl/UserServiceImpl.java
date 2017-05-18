@@ -81,9 +81,9 @@ public class UserServiceImpl implements UserService {
             System.out.println(user);
             if (password.equals(user.getPassword()) && user.getRoleId() == 1) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showUser.html", "登陆成功");
-            }else if (password.equals(user.getPassword()) && user.getRoleId() != 1) {
+            } else if (password.equals(user.getPassword()) && user.getRoleId() != 1) {
                 response = commonImpl.responseDeal(response, Global.SUCCESS, "/showAtc.html#article-" + user.getUserId(), "登陆成功");
-            }else {
+            } else {
                 response = commonImpl.responseDeal(response, Global.ERROR, "/index.html", "密码错误");
             }
         } catch (Exception e) {
@@ -125,8 +125,6 @@ public class UserServiceImpl implements UserService {
         DataResponse response = new DataResponse();
         try {
             User inputUser = (User) commonImpl.mapJsonToObj(dataRequest, response, "user", User.class, implClass);
-//            inputUser.setUserId(userMapper.countUser() + 1);
-//            inputUser.setRoleId(1);
             inputUser.setLastLoginTime(dateUtils.formatDateTimeN(new Date()));
             int sucFlag = userMapper.insertSelective(inputUser);
             if (sucFlag == 1) {
@@ -186,6 +184,13 @@ public class UserServiceImpl implements UserService {
         return response;
     }
 
+    /**
+     * 获取当前用户ID
+     *
+     * @param dataRequest
+     * @param request
+     * @return
+     */
     @Override
     public DataResponse getId(DataRequest dataRequest, HttpServletRequest request) {
         DataResponse response = new DataResponse();

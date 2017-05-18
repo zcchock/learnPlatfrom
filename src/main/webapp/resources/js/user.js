@@ -12,7 +12,7 @@ var userFunction = (function ($) {
             data: JSON.stringify(reqdata),
             success: getSuccess,
             error: function () {
-                
+
             }
         });
     })
@@ -163,8 +163,6 @@ var userFunction = (function ($) {
                 error: errCallback
             })
         },
-        
-        
 
 
         /*查看当前用户详情*/
@@ -180,6 +178,7 @@ var userFunction = (function ($) {
                 $("#detail-phone").val(user.phone);
                 $("#detail-lastLogin").val(user.lastLoginTime);
             }
+
             var reqdata = {}
             $.ajax({
                 url: "/user/getId",
@@ -343,7 +342,7 @@ var userFunction = (function ($) {
 
         /*更新当前用户信息*/
         updateOwnUser: function () {
-            
+
             var formHtml = $("#user-update-form").html();
             //初始化文本框的内容
             function initView(user) {
@@ -354,6 +353,7 @@ var userFunction = (function ($) {
                 $("#update-email").val(user.email);
                 $("#update-phone").val(user.phone);
             }
+
             var reqdata = {}
             $.ajax({
                 url: "/user/getId",

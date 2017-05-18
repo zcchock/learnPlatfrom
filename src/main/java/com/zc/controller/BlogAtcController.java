@@ -33,7 +33,13 @@ public class BlogAtcController {
     @Autowired
     private BlogAtcService blogAtcService;
 
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    /**
+     * 获取文章列表
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequiresRoles(value = {"admin", "normal"}, logical = Logical.OR)
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public DataResponse userList(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -42,7 +48,13 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    /**
+     * 获取文章详情
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequiresRoles(value = {"admin", "normal"}, logical = Logical.OR)
     @RequestMapping(value = "/getAtc", method = RequestMethod.POST)
     public DataResponse getUserById(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -51,7 +63,13 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    /**
+     * 获取用户的文章
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequiresRoles(value = {"admin", "normal"}, logical = Logical.OR)
     @RequestMapping(value = "/getAtcs", method = RequestMethod.POST)
     public DataResponse getAtcsByUid(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -68,7 +86,13 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    /**
+     * 添加文章
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequiresRoles(value = {"admin", "normal"}, logical = Logical.OR)
     @RequestMapping(value = "/addAtc", method = RequestMethod.POST)
     public DataResponse addAtc(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -77,7 +101,13 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    /**
+     * 更新文章
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequiresRoles(value = {"admin", "normal"}, logical = Logical.OR)
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public DataResponse updateUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();
@@ -86,7 +116,13 @@ public class BlogAtcController {
         return dataResponse;
     }
 
-    @RequiresRoles(value={"admin", "normal"}, logical= Logical.OR)
+    /**
+     * 删除用户
+     *
+     * @param dataRequest
+     * @return
+     */
+    @RequiresRoles(value = {"admin", "normal"}, logical = Logical.OR)
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public DataResponse delUser(@RequestBody(required = false) DataRequest dataRequest) {
         String clientIp = request.getRemoteAddr();

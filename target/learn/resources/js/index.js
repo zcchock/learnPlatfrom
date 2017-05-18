@@ -64,7 +64,7 @@ var loginFunction = (function ($) {
                         callback: function () {
                             var account = $("#register-account").val();
                             var name = $("#register-name").val();
-                            var sex = $("#regist-sex").val();
+                            var sex = $("#register-sex").val();
                             var password = $("#register-password").val();
                             var email = $("#register-email").val();
                             var phone = $("#register-phone").val();

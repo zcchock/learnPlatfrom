@@ -47,7 +47,7 @@ public class BlogAtcServiceImpl implements BlogAtcService {
             BlogAtc blogAtc = blogAtcMapper.queryAtc(atcId);
             blogAtc.setAtcView(blogAtc.getAtcView() + 1);
             blogAtcMapper.updateById(blogAtc); //更新浏览次数
-            User author = userMapper.queryUser(blogAtc.getUserId()) ;
+            User author = userMapper.queryUser(blogAtc.getUserId());
             if (blogAtc != null) {
                 blogAtc.setAtcUrl(fileMethod.ReadTxtFile(blogAtc.getAtcUrl()));
                 blogAtc.setAtcBackup(author.getAccount());
@@ -82,7 +82,7 @@ public class BlogAtcServiceImpl implements BlogAtcService {
      * @param dataRequest
      * @return
      */
-    public DataResponse addAtc(DataRequest dataRequest,HttpServletRequest request) {
+    public DataResponse addAtc(DataRequest dataRequest, HttpServletRequest request) {
         DataResponse response = new DataResponse();
         String account = (String) request.getAttribute("userAcc");
         try {
@@ -156,6 +156,12 @@ public class BlogAtcServiceImpl implements BlogAtcService {
         return response;
     }
 
+    /**
+     * 通过文章类型来获取文章列表
+     *
+     * @param dataRequest
+     * @return
+     */
     @Override
     public DataResponse getActsByType(DataRequest dataRequest) {
         DataResponse response = new DataResponse();
