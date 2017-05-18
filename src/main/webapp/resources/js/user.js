@@ -223,6 +223,7 @@ var userFunction = (function ($) {
                         success: function (resp) {
                             if (resp.status === "success") {
                                 var user = JSON.parse(resp.data);
+                                setTime(user);
                                 bootbox.dialog({
                                     message: formHtml,
                                     title: "用户详情",

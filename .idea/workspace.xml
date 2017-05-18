@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c48a811-7788-4cc1-8bc8-2ce254f6ebb5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/zc/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/zc/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/controller/UserController.class" afterPath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/controller/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/target/learn/WEB-INF/classes/com/zc/service/impl/UserServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/user.js" />
     </list>
@@ -37,8 +41,8 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="170" column="40" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
+            <state relative-caret-position="231">
+              <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -1249,14 +1253,7 @@
       <workItem from="1494776424184" duration="4647000" />
       <workItem from="1494815890734" duration="575000" />
       <workItem from="1494830502659" duration="673000" />
-      <workItem from="1495102017103" duration="1588000" />
-    </task>
-    <task id="LOCAL-00009" summary="添加用户添加和查询用户列表的实现（待优化）">
-      <created>1493133684653</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1493133684653</updated>
+      <workItem from="1495102017103" duration="1944000" />
     </task>
     <task id="LOCAL-00010" summary="添加用户功能：插入数据库有异常未解决">
       <created>1493177124171</created>
@@ -1594,7 +1591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495102750456</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="用户详情显示时间格式化">
+      <created>1495103648192</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1495103648192</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1630,7 +1634,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270224000" />
+    <option name="totallyTimeSpent" value="270580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="753" extended-state="6" />
@@ -1688,7 +1692,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="文章详情展示页面添加作者信息" />
     <MESSAGE value="用户添加好友功能实现" />
     <MESSAGE value="所有页面添加导航栏（导航栏中功能未实现）" />
     <MESSAGE value="实现文章浏览次数计数" />
@@ -1713,7 +1716,8 @@
     <MESSAGE value="解决了注册接口拦截问题（新问题：弹窗是有两个控件被初始化了）" />
     <MESSAGE value="解决控件被初始化问题（原因不理解）" />
     <MESSAGE value="代码整理，添加注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="代码整理，添加注释" />
+    <MESSAGE value="用户详情显示时间格式化" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户详情显示时间格式化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2145,8 +2149,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="170" column="40" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
+        <state relative-caret-position="231">
+          <caret line="250" column="25" selection-start-line="250" selection-start-column="25" selection-end-line="250" selection-end-column="25" />
           <folding />
         </state>
       </provider>
