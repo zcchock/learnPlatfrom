@@ -22,6 +22,29 @@ var userFunction = (function ($) {
         toastr["error"]("请求失败", "网络异常");
     }
 
+    //从数据库回显时，做成适合展示的格式（update，view）
+    function setTime(formObject) {
+        formObject.lastLoginTime = getYYYYMMDDhhmmss(formObject.lastLoginTime);
+    }
+
+    /**
+     * 20160101190000 --> 2016/01/01 19:00:00
+     * @param item
+     * @returns {string}
+     */
+    function getYYYYMMDDhhmmss(item) {
+        if(item != null && $.trim(item) != ""){
+            var a = item.split("");
+            a.splice(4, 0, "/");
+            a.splice(7, 0, "/");
+            a.splice(10, 0, " ");
+            a.splice(13, 0, ":");
+            a.splice(16, 0, ":");
+            return a.join("");
+        }
+        return item
+    }
+
 
     /*用户数据填充表格*/
     function setCollectionTable(tables, id) {
@@ -144,6 +167,7 @@ var userFunction = (function ($) {
                 success: function (resp) {
                     if (resp.status === "success") {
                         var user = JSON.parse(resp.data);
+                        setTime(user);
                         bootbox.dialog({
                             message: formHtml,
                             title: "用户详情",
